@@ -38,13 +38,13 @@ An exception is a Java class representing a unique state, which inherits directl
 
 Examples of exception classes from the standard API:
 
-[NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html)
+[NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html)
 : Indicates that a **null** reference is used to invoke a method or access a property.
 
-[NumberFormatException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NumberFormatException.html)
+[NumberFormatException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NumberFormatException.html)
 : Indicates the inability to convert a string to a number as the string doesn’t represent a valid number.
 
-[IndexOutOfBoundsException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IndexOutOfBoundsException.html)
+[IndexOutOfBoundsException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IndexOutOfBoundsException.html)
 : Signals an attempt to access an array index outside of the permitted values.
 
 To create a custom exception, simply derive a class from the java.lang.Exception class.
@@ -130,7 +130,7 @@ try {
 ```
 
 In the above example, if the variable *hero* is **null**, the processing
-of the **try** block is interrupted on line 3 by a [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html).
+of the **try** block is interrupted on line 3 by a [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html).
 Otherwise, the block continues to execute. Line 13 will only execute if the condition
 on line 9 is false. However, if this condition is true, the block’s processing
 is interrupted by the throwing of an *EndOfTheWorldException* and the
@@ -165,8 +165,8 @@ try {
 ```
 
 In the above code, the **catch** block is associated with exceptions of type
-[Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html). As all exceptions in Java inherit directly or indirectly
-from this class, this block will execute to handle the [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html)
+[Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html). As all exceptions in Java inherit directly or indirectly
+from this class, this block will execute to handle the [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html)
 on line 3 or the *EndOfTheWorldException* on line 10.
 
 **catch** blocks are considered during execution in the order of their
@@ -195,7 +195,7 @@ try {
 }
 ```
 
-In the previous example, it’s important to understand that [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) is the parent
+In the previous example, it’s important to understand that [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) is the parent
 class of *EndOfTheWorldException*. Thus, if an *EndOfTheWorldException* type exception
 is thrown, only the first **catch** block will execute. The second is
 therefore simply dead code and will generate a compilation error. To make it work,
@@ -229,9 +229,9 @@ exceptions of type *EndOfTheWorldException* or its child types, and a second
 
 Sometimes, the code inside the **catch** block is the same for different types of exceptions.
 If these exceptions have a common parent class, it’s possible to declare
-a **catch** block simply for this parent class to avoid code duplication. In our example, the common ancestor between [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html)
-and *EndOfTheWorldException* is the [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) class. Therefore, if we declare a **catch** block
-for the [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) type, we are providing a handling block for
+a **catch** block simply for this parent class to avoid code duplication. In our example, the common ancestor between [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html)
+and *EndOfTheWorldException* is the [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) class. Therefore, if we declare a **catch** block
+for the [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) type, we are providing a handling block for
 all types of exceptions, which isn’t really the intended goal. In
 such a situation, you can specify multiple exception types in
 the **catch** block, separated by **|**:
@@ -470,7 +470,7 @@ try (java.io.FileReader reader = new java.io.FileReader(filename)) {
 }
 ```
 
-After the **try** keyword, one or more variable initializations are declared in parentheses. These variables must be of a type that implements the [AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html) or [Closeable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html) interfaces. These interfaces declare only one method: **close**. The compiler automatically adds a **finally** block after the **try** block to call the **close** method on each variable that isn’t **null**.
+After the **try** keyword, one or more variable initializations are declared in parentheses. These variables must be of a type that implements the [AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html) or [Closeable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Closeable.html) interfaces. These interfaces declare only one method: **close**. The compiler automatically adds a **finally** block after the **try** block to call the **close** method on each variable that isn’t **null**.
 
 For this code:
 

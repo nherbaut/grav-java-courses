@@ -193,7 +193,7 @@ for (int i : maCollection) {
 ```
 
 Pour que cette expression compile, il faut que la variable désignant la collection
-à droite de **:** implémente le type [Iterable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html) ou qu’il s’agisse d’un tableau.
+à droite de **:** implémente le type [Iterable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html) ou qu’il s’agisse d’un tableau.
 Il faut également que la variable à gauche de **:** soit compatible pour l’assignation
 d’un élément de la collection.
 

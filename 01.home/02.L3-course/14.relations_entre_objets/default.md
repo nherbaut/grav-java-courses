@@ -365,12 +365,12 @@ un héritage.
 
 Java ne supporte pas l’héritage multiple. Soit le développeur déclare avec
 le mot-clé **extends** une seule classe parente, soit le compilateur part
-du principe que la classe hérite de la classe [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html). Toutes les classes
-en Java ont une classe parente (hormis la classe [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html)). L’arbre d’héritage
-en Java ne possède qu’une seule classe racine : la classe [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html).
+du principe que la classe hérite de la classe [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html). Toutes les classes
+en Java ont une classe parente (hormis la classe [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html)). L’arbre d’héritage
+en Java ne possède qu’une seule classe racine : la classe [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html).
 
 #### NOTE
-C’est la classe [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) qui déclare notamment les méthodes [toString](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString--) et [equals](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals-java.lang.Object-).
+C’est la classe [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) qui déclare notamment les méthodes [toString](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString--) et [equals](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals-java.lang.Object-).
 Voilà pourquoi tous les objets Java peuvent avoir par défaut une représentation
 sous forme de chaîne de caractères et qu’ils peuvent être comparés aux autres.
 
@@ -423,8 +423,8 @@ de type *Voiture* à des variables de type *Vehicule*.
 
 #### NOTE
 Comme Java se base sur une hiérarchie à racine unique, toutes les classes
-héritent directement ou indirectement de [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html). Donc, toute instance peut
-être affectée à une variable, un attribut ou un paramètre de type [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html).
+héritent directement ou indirectement de [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html). Donc, toute instance peut
+être affectée à une variable, un attribut ou un paramètre de type [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html).
 
 ```java
 Object obj = null;
@@ -458,7 +458,7 @@ Cependant, l’affectation à la ligne 3 est erronée puisque la variable *vehic
 référence une instance de *Voiture* que l’on veut affecter à une variable de type
 *Moto*. Pour les types primitifs, un transtypage invalide conduit à une possible
 perte de données. Par contre, pour des objets, un transtypage invalide génère à
-l’exécution une erreur de type [java.lang.ClassCastException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassCastException.html).
+l’exécution une erreur de type [java.lang.ClassCastException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassCastException.html).
 
 ## Le mot-clé instanceof
 
@@ -686,8 +686,8 @@ est maintenant impossible de déclarer une classe qui étende la classe *Moto*.
 
 En raison de son impact très fort, la déclaration d’une classe comme **final**
 est réservée à des cas très particuliers. Un exemple est la classe
-[java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html). Cette classe est déclarée **final**. Il est donc impossible
-en Java de créer une classe qui hérite de [java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html). Les développeurs de
+[java.lang.String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html). Cette classe est déclarée **final**. Il est donc impossible
+en Java de créer une classe qui hérite de [java.lang.String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html). Les développeurs de
 l’API standard ont jugé qu’en raison de son importance, cette classe devait être
 fermée en extension afin d’éviter toute modification de comportement par héritage.
 

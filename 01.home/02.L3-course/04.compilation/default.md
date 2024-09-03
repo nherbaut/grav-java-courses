@@ -52,7 +52,7 @@ contenant ce code.
 ## La compilation
 
 Pour pouvoir exécuter ce programme, nous allons devoir le compiler. Pour cela,
-nous devons utiliser le programme [javac](https://docs.oracle.com/en/java/javase/17/docs/specs/man/javac.html) (Java Compiler) dont c’est la fonction.
+nous devons utiliser le programme [javac](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html) (Java Compiler) dont c’est la fonction.
 Dans un terminal, il suffit de se rendre dans le répertoire où se situe le fichier
 et de lancer la commande de compilation :
 
@@ -62,16 +62,16 @@ $ javac PremierProgramme.java
 ```
 
 #### ATTENTION
-Si votre système ne connaît pas la commande [javac](https://docs.oracle.com/en/java/javase/17/docs/specs/man/javac.html) cela signifie simplement
+Si votre système ne connaît pas la commande [javac](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html) cela signifie simplement
 que le répertoire contenant ce programme n’est pas déclaré dans le chemin d’exécution
 du système. Il vous suffit de le rajouter ou de donner le chemin complet menant à
 ce programme. Par exemple :
 
 ```shell
-$ /usr/lib/jvm/java-17-openjdk-amd64/bin/javac PremierProgramme.java
+$ /usr/lib/jvm/java-21-openjdk-amd64/bin/javac PremierProgramme.java
 ```
 
-Le programme [javac](https://docs.oracle.com/en/java/javase/17/docs/specs/man/javac.html) est installé dans le sous-répertoire **bin** du répertoire
+Le programme [javac](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html) est installé dans le sous-répertoire **bin** du répertoire
 d’installation du JDK
 
 La compilation devrait se passer sans problème et aboutir à la création du fichier
@@ -87,26 +87,26 @@ par la JVM.
 ## L’exécution
 
 L’exécution d’un programme se fait par l’intermédiaire de la machine virtuelle. Pour invoquer cette
-dernière, on utilise tout simplement la commande [java](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html) suivie du nom de la classe **sans l’extension** :
+dernière, on utilise tout simplement la commande [java](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html) suivie du nom de la classe **sans l’extension** :
 
 ```shell
 $ java PremierProgramme
 ```
 
 #### ATTENTION
-Si votre système ne connaît pas la commande [java](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html) cela signifie simplement
+Si votre système ne connaît pas la commande [java](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html) cela signifie simplement
 que le répertoire contenant ce programme n’est pas déclaré dans le chemin d’exécution
 du système. Il vous suffit de le rajouter ou de donner le chemin complet menant à
 ce programme. Par exemple :
 
 ```shell
-$ /usr/lib/jvm/java-17-openjdk-amd64/bin/java PremierProgramme
+$ /usr/lib/jvm/java-21-openjdk-amd64/bin/java PremierProgramme
 ```
 
-Le programme [java](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html) est installé dans le sous-répertoire **bin** du répertoire
+Le programme [java](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html) est installé dans le sous-répertoire **bin** du répertoire
 d’installation du JDK
 
-La commande [java](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html) va chercher le fichier PremierProgramme.class pour l’exécuter.
+La commande [java](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html) va chercher le fichier PremierProgramme.class pour l’exécuter.
 Cela signifie qu’à ce stade, vous n’êtes pas obligé de disposer du fichier source
 PremierProgramme.java.
 
@@ -156,7 +156,7 @@ La liaison dynamique implique qu’un programme Java est une collection de fichi
 Ces fichiers peuvent se trouver à différents endroits dans le système de fichiers.
 Il faut donc un mécanisme pour permettre de les localiser. En Java, on utilise
 le **classpath** : le chemin des classes. On peut par exemple spécifier un
-ou plusieurs chemins avec le paramètre **-classpath** aux commandes [java](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html) et [javac](https://docs.oracle.com/en/java/javase/17/docs/specs/man/javac.html)
+ou plusieurs chemins avec le paramètre **-classpath** aux commandes [java](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html) et [javac](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html)
 indiquant les répertoires à partir desquels il est possible de trouver des fichiers
 class.
 
@@ -194,13 +194,13 @@ compte qu’il n’est pas très facile de distribuer un programme Java sous cet
 
 Pour palier à ce problème, on peut utiliser des fichiers jar. JAR signifie *Java ARchive* :
 il s’agit d’un fichier zip contenant un ensemble de fichiers class mais qui a l’extension **.jar**.
-Java fournit l’utilitaire [jar](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jar.html) pour créer une archive :
+Java fournit l’utilitaire [jar](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jar.html) pour créer une archive :
 
 ```shell
 $ jar -cf monappli.jar PremierProgramme.class
 ```
 
-L’utilitaire [jar](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jar.html) reprend la syntaxe de **tar** sous les systèmes \*NIX.
+L’utilitaire [jar](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jar.html) reprend la syntaxe de **tar** sous les systèmes \*NIX.
 
 Un fichier JAR peut être ajouté au classpath rendant ainsi disponible l’ensemble
 des fichiers qu’il contient.

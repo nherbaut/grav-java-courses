@@ -289,7 +289,7 @@ continuité de service du point de vue du client. Sans aller trop loin
 dans les implications de la passivation/activation, il suffit de savoir
 que les classes annotées avec `@SessionScoped` doivent implémenter
 l’interface marqueur
-[java.io.Serializable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html).
+[java.io.Serializable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html).
 
 ```java
 import javax.enterprise.context.SessionScoped;

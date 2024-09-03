@@ -60,7 +60,7 @@ source: [https://www.ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov/nuccore/NC_0
 
 ## Objectifs de cette phase du cours
 
-Dans cette phase, nous allons tâcher de comprendre la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) présente dans le JDK17.
+Dans cette phase, nous allons tâcher de comprendre la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) présente dans le JDK21.
 
 La classe String présente de nombreuses méthodes utilisées pour manipuler des chaines de caractères et dispose de nombreuses méthodes très utiles. Nous allons étudier seulement une partie des méthodes de la classe String, mais vous pouvez vous référer à la documentation en ligne pour en savoir plus.
 
@@ -111,24 +111,24 @@ Il est toute fois préférable d'utiliser les méthodes prévues par la classe `
 * elles seront optimisées par rapport à notre code, la pluspart du temps
 * elles nous évitent de faire des erreurs car les tableaux sont fragiles
 
-Notez l'utilisation de la classe [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) dans le code suivant:
+Notez l'utilisation de la classe [Character](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html) dans le code suivant:
 
 <iframe src="https://java.miage.dev?gistId=815d56f4b61b756c3675c189faf92504" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 ### la méthodes String.subString
 
-Consultez la documentation de la méthode [substring](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int)) et comprenez son usage, puis testez la et répondez aux questions de l'extrait de code.
+Consultez la documentation de la méthode [substring](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int)) et comprenez son usage, puis testez la et répondez aux questions de l'extrait de code.
 
 <iframe src="https://java.miage.dev?gistId=23e89686ba8a267cfc0227dce63f6303" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 ### Autres méthodes que nous allons utiliser
 
 
-* [public int length()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html%23length%28%29)
-* [public int indexOf(int ch)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#indexOf(int))
-* [public int indexOf(int ch, int fromIndex)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#indexOf(int,int))
-* [public boolean startsWith(String prefix)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#startsWith(java.lang.String))
-* [boolean endsWith(String suffix)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#endsWith(java.lang.String))
+* [public int length()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html%23length%28%29)
+* [public int indexOf(int ch)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#indexOf(int))
+* [public int indexOf(int ch, int fromIndex)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#indexOf(int,int))
+* [public boolean startsWith(String prefix)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#startsWith(java.lang.String))
+* [boolean endsWith(String suffix)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#endsWith(java.lang.String))
 
 <iframe src="https://java.miage.dev?gistId=a00e413d8ae6563376065d3bc5906165" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 

@@ -107,8 +107,8 @@ dans la bibliothèque standard fournie avec le JDK.
 Une classe est normalement désignée par son *nom complet*, c’est-à-dire par le
 chemin de packages suivi d’un **.** suivi du nom de la classe.
 
-Par exemple, la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) s’appelle en fait [java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) car elle se
-trouve dans le package [java.lang](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/package-summary.html). J’ai donc la possibilité, si je le souhaite,
+Par exemple, la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) s’appelle en fait [java.lang.String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) car elle se
+trouve dans le package [java.lang](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/package-summary.html). J’ai donc la possibilité, si je le souhaite,
 de créer ma propre classe String par exemple dans le package io.github.spoonless :
 
 ```java
@@ -118,7 +118,7 @@ public class String {
 ```
 
 Il est possible d’accèder à une classe en spécifiant son nom complet. Par
-exemple, pour accèder à la classe [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) :
+exemple, pour accèder à la classe [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) :
 
 ```java
 public class MaClasse {
@@ -131,9 +131,9 @@ public class MaClasse {
 ```
 
 Par défaut, une classe a accès à l’espace de nom de son propre package et du
-package [java.lang](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/package-summary.html). Voilà pourquoi, il est possible d’utiliser directement
-les classes [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) ou [Math](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html) sans avoir à donner leur nom complet :
-[java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html), [java.lang.Math](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html).
+package [java.lang](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/package-summary.html). Voilà pourquoi, il est possible d’utiliser directement
+les classes [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) ou [Math](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html) sans avoir à donner leur nom complet :
+[java.lang.String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html), [java.lang.Math](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html).
 
 Si nous créons deux classes : *Voiture* et *Conducteur*, toutes deux dans le
 package io.github.spoonless :

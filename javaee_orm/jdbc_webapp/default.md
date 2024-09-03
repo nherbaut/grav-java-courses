@@ -8,7 +8,7 @@ application Web.
 
 ## Déclaration d’une DataSource
 
-Dans un serveur d’application, l’utilisation du [DriverManager](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/DriverManager.html) JDBC est remplacée
+Dans un serveur d’application, l’utilisation du [DriverManager](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/DriverManager.html) JDBC est remplacée
 par celle de la [DataSource](https://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html). L’interface [DataSource](https://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html) n’offre que deux méthodes :
 
 ```java
@@ -113,7 +113,7 @@ vers une base de données MySQL par exemple, nous devons installer le pilote
 MySQL dans le serveur.
 
 Ce système de configuration est certes plus compliqué que l’utilisation du
-[DriverManager](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/DriverManager.html) mais il permet à l’application d’ignorer les détails de
+[DriverManager](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/DriverManager.html) mais il permet à l’application d’ignorer les détails de
 configuration. Généralement le développeur de l’application référence une [DataSource](https://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html)
 et c’est l’administrateur du serveur qui configure la connexion de cette [DataSource](https://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html)
 vers une base de données spécifiques.

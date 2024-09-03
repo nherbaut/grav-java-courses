@@ -110,7 +110,7 @@ pour chacun des éléments de l’énumération.
 : Une méthode de classe qui permet de convertir une chaîne de caractères en une
   énumération. Attention
   toutefois, si la chaîne de caractères ne correspond pas à un nom d’un élément
-  de l’énumération, cette méthode produit une [IllegalArgumentException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html).
+  de l’énumération, cette méthode produit une [IllegalArgumentException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html).
 
 ```java
 Criticite criticite = Criticite.valueOf("HAUTE");
@@ -146,8 +146,8 @@ int ordre = Criticite.HAUTE.ordinal(); // 2
 ```
 
 #### NOTE
-Une énumération implémente également l’interface [Comparable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html).
-Donc, une énumération implémente la méthode [compareTo](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#compareTo-E-) qui réalise une
+Une énumération implémente également l’interface [Comparable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html).
+Donc, une énumération implémente la méthode [compareTo](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html#compareTo-E-) qui réalise une
 comparaison en se basant sur le numéro d’ordre.
 
 ## Égalité entre énumérations
@@ -237,7 +237,7 @@ Le code ci-dessus nous permet de remarquer que :
   d’une énumération (sauf en créant une classe interne anonyme).
 * Le constructeur d’une énumération est privé, empêchant ainsi de créer de
   nouvelle instance.
-* Une énumération hérite de la classe [Enum](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html).
+* Une énumération hérite de la classe [Enum](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html).
 
 ## Ajout de méthodes et d’attributs
 

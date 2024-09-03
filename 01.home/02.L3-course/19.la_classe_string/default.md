@@ -21,7 +21,7 @@ content:
 
 # La classe String
 
-En Java, les chaînes de caractères sont des instances de la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html).
+En Java, les chaînes de caractères sont des instances de la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html).
 Les chaînes de caractères écrites littéralement sont toujours délimitées par des
 guillemets :
 
@@ -33,7 +33,7 @@ guillemets :
 
 Contrairement à d’autres langages de programmation, une chaîne de caractères
 ne peut pas être traitée comme un tableau. Si on souhaite accéder à un caractère
-de la chaîne à partir de son index, il faut utiliser la méthode [String.charAt](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#charAt-int-).
+de la chaîne à partir de son index, il faut utiliser la méthode [String.charAt](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#charAt-int-).
 On peut ainsi parcourir les caractères d’une chaîne :
 
 ```java
@@ -45,11 +45,11 @@ for (int i = 0; i < s.length(); ++i) {
 }
 ```
 
-La méthode [String.length](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#length--) permet de connaître le nombre de caractères dans la chaîne.
+La méthode [String.length](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#length--) permet de connaître le nombre de caractères dans la chaîne.
 Il n’est malheureusement pas possible d’utiliser un for amélioré pour parcourir
-les caractères d’une chaîne car la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) n’implémente pas l’interface
-[Iterable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html). Par contre, il est possible d’obtenir un tableau des caractères avec
-la méthode [String.toCharArray](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toCharArray--). On peut alors parcourir ce tableau avec un for amélioré.
+les caractères d’une chaîne car la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) n’implémente pas l’interface
+[Iterable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html). Par contre, il est possible d’obtenir un tableau des caractères avec
+la méthode [String.toCharArray](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#toCharArray--). On peut alors parcourir ce tableau avec un for amélioré.
 
 ```java
 String s = "Hello World";
@@ -60,7 +60,7 @@ for (char c : s.toCharArray()) {
 ```
 
 #### NOTE
-La méthode [String.toCharArray](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toCharArray--) a l’inconvénient de créer un tableau de la même
+La méthode [String.toCharArray](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#toCharArray--) a l’inconvénient de créer un tableau de la même
 longueur que la chaîne et de copier un à un les caractères. Si votre programme
 manipule intensivement des chaînes de caractères de taille importante, cela
 peut être pénalisant pour les performances. Depuis Java 8, il existe avec une
@@ -74,11 +74,11 @@ s.chars().forEach(c -> System.out.println((char)c));
 
 ## Quelques méthodes utilitaires
 
-Voici ci-dessous, quelques méthodes utiles fournies par la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html).
+Voici ci-dessous, quelques méthodes utiles fournies par la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html).
 Reportez-vous à la documentation de la classe pour consulter la liste complète
 des méthodes.
 
-[String.equals](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#equals-java.lang.Object-)
+[String.equals](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#equals-java.lang.Object-)
 
 > Compare la chaîne de caractères avec une autre chaînes de caractères.
 
@@ -99,7 +99,7 @@ String.equalsIgnoreCase
 > System.out.println("ab".equalsIgnoreCase("AB")); // true
 > ```
 
-[String.compareTo](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#compareTo-java.lang.String-)
+[String.compareTo](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#compareTo-java.lang.String-)
 
 > Compare la chaîne de caractères avec une autre chaînes de caractères. La comparaison
 > se fait suivant la taille des chaînes et l’ordre lexicographique des caractères. Cette méthode
@@ -115,7 +115,7 @@ String.equalsIgnoreCase
 > System.out.println("ab".compareTo("AB")); // > 0
 > ```
 
-[String.compareToIgnoreCase](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#compareToIgnoreCase-java.lang.String-)
+[String.compareToIgnoreCase](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#compareToIgnoreCase-java.lang.String-)
 
 > Comme la méthode précédente sauf que deux chaînes qui ne diffèrent que par
 > la casse seront considérées comme identiques.
@@ -128,7 +128,7 @@ String.equalsIgnoreCase
 > System.out.println("ab".compareToIgnoreCase("AB")); // 0
 > ```
 
-[String.concat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#concat-java.lang.String-)
+[String.concat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#concat-java.lang.String-)
 
 > Concatène les deux chaînes dans une troisième. Cette méthode est équivalente
 > à l’utilisation de l’opérateur **+**.
@@ -137,7 +137,7 @@ String.equalsIgnoreCase
 > String s = "Hello".concat(" ").concat("World"); // "Hello World"
 > ```
 
-[String.contains](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#contains-java.lang.CharSequence-)
+[String.contains](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#contains-java.lang.CharSequence-)
 
 > Retourne **true** si la chaîne contient une séquence de caractères donnée.
 
@@ -146,7 +146,7 @@ String.equalsIgnoreCase
 > b = "Hello World".contains("Monde");         // false
 > ```
 
-[String.endsWith](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#endsWith-java.lang.String-)
+[String.endsWith](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#endsWith-java.lang.String-)
 
 > Retourne **true** si la chaîne se termine par une chaîne de caractères donnée.
 
@@ -155,7 +155,7 @@ String.equalsIgnoreCase
 > b = "Hello World".endsWith("Hello");         // false
 > ```
 
-[String.startsWith](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#startsWith-java.lang.String-)
+[String.startsWith](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#startsWith-java.lang.String-)
 
 > Retourne **true** si la chaîne commence par une chaîne de caractères donnée.
 
@@ -164,7 +164,7 @@ String.equalsIgnoreCase
 > b = "Hello World".endsWith("World");         // false
 > ```
 
-[String.isEmpty](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#isEmpty--)
+[String.isEmpty](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#isEmpty--)
 
 > Retourne **true** si la chaîne est la chaîne vide (*length()* vaut 0)
 
@@ -173,7 +173,7 @@ String.equalsIgnoreCase
 > b = "Hello World".isEmpty(); // false
 > ```
 
-[String.length](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#length--)
+[String.length](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#length--)
 
 > Retourne le nombre de caractères dans la chaîne.
 
@@ -181,7 +181,7 @@ String.equalsIgnoreCase
 > int n = "Hello World".length(); // 11
 > ```
 
-[String.replace](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#replace-char-char-)
+[String.replace](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replace-char-char-)
 
 > Remplace un caractère par un autre dans une nouvelle chaîne de caractères.
 
@@ -196,7 +196,7 @@ String.equalsIgnoreCase
 > String s = "Hello World".replace(" World", ""); // "Hello"
 > ```
 
-[String.substring](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring-int-int-)
+[String.substring](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring-int-int-)
 
 > Crée une nouvelle sous-chaîne à partir de l’index de début et jusqu’à
 > l’index de fin (non inclus).
@@ -206,7 +206,7 @@ String.equalsIgnoreCase
 > s = "Hello World".substring(0, 5);        // "Hello"
 > ```
 
-[String.toLowerCase](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toLowerCase--)
+[String.toLowerCase](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#toLowerCase--)
 
 > Crée une chaîne de caractères équivalente en minuscules.
 
@@ -214,7 +214,7 @@ String.equalsIgnoreCase
 > String s = "Hello World".toLowerCase(); // "hello world"
 > ```
 
-[String.toUpperCase](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toUpperCase--)
+[String.toUpperCase](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#toUpperCase--)
 
 > Crée une chaîne de caractères équivalente en majuscules.
 
@@ -222,7 +222,7 @@ String.equalsIgnoreCase
 > String s = "Hello World".toUpperCase(); // "HELLO WORLD"
 > ```
 
-[String.trim](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#trim--)
+[String.trim](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#trim--)
 
 > Crée une nouvelle chaîne de caractères en supprimant les espaces au début et
 > à la fin.
@@ -233,7 +233,7 @@ String.equalsIgnoreCase
 
 ## Construction d’une instance de String
 
-La classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) possède plusieurs constructeurs qui permettent de créer
+La classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) possède plusieurs constructeurs qui permettent de créer
 une chaîne de caractères avec l’opérateur **new**.
 
 ```java
@@ -251,7 +251,7 @@ String s4 = new String(tableauCode); // à partir d'un tableau de code UTF-16
 
 ## Immutabilité des chaînes de caractères
 
-Les instances de la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) sont immutables. Cela signifie qu’il est
+Les instances de la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) sont immutables. Cela signifie qu’il est
 impossible d’altérer le contenu de la chaîne de caractères une fois qu’elle
 a été créée. Si vous reprenez la liste des méthodes ci-dessus, vous verrez
 que toutes les méthodes qui *modifient* le contenu de la chaîne de caractères
@@ -262,7 +262,7 @@ toutes les opérations se font finalement par copie.
 
 Nous avons vu qu’il n’existe pas réellement de constante en Java mais
 uniquement des attributs déclarés avec **static** et **final**. Cette immutabilité
-permet de garantir qu’une variable de [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) déclarée **static** et **final**
+permet de garantir qu’une variable de [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) déclarée **static** et **final**
 ne peut plus être modifié.
 
 La JVM tire également partie de cette immutabilité afin de réaliser
@@ -283,20 +283,20 @@ Dans le code ci-dessus, on utilise l’opérateur **==** donc on ne compare pas
 le contenu des chaînes de caractères mais la référence des objets. La chaîne
 de caractères « test » apparaît plusieurs fois dans le code. Donc quand la JVM
 va charger la classe qui contient ce code, elle ne créera qu’une et une seule
-fois l’instance de [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) pour « test ». Voilà pourquoi la ligne 3 affiche
+fois l’instance de [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) pour « test ». Voilà pourquoi la ligne 3 affiche
 **true**. Le contenu de la variable *s* référence exactement la même instance
-de [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html). Par contre, les lignes 4 et 5 créent explicitement une nouvelle instance
-de [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) avec l’opérateur **new**. Il s’agit donc de nouveaux objets avec de
+de [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html). Par contre, les lignes 4 et 5 créent explicitement une nouvelle instance
+de [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) avec l’opérateur **new**. Il s’agit donc de nouveaux objets avec de
 nouvelles références.
 
 ## La classe StringBuilder
 
-La classe [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) permet de construire une chaîne de caractères par ajout
+La classe [StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html) permet de construire une chaîne de caractères par ajout
 (concaténation) ou insertion d’élements. Il est même possible de supprimer des portions.
-La quasi totalité des méthodes de la classe [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) retourne l’instance
-courante du [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) ce qui permet de chaîner les appels en une seule
+La quasi totalité des méthodes de la classe [StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html) retourne l’instance
+courante du [StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html) ce qui permet de chaîner les appels en une seule
 instruction.
-Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode [StringBuilder.toString](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html#toString--).
+Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode [StringBuilder.toString](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html#toString--).
 
 ```java
 StringBuilder sb = new StringBuilder();
@@ -314,10 +314,10 @@ sb.deleteCharAt(0).reverse();
 System.out.println(sb); // "Hello the world"
 ```
 
-La classe [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) permet de pallier au fait que les instances de la
-classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) sont immutables. D’ailleurs, l’opérateur **+** de concaténation
+La classe [StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html) permet de pallier au fait que les instances de la
+classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) sont immutables. D’ailleurs, l’opérateur **+** de concaténation
 de chaînes n’est qu’un sucre syntaxique, le compilateur le remplace par une
-utilisation de la classe [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html).
+utilisation de la classe [StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html).
 
 ```java
 String s1 = "Hello";
@@ -337,7 +337,7 @@ String message = new StringBuilder().append(s1).append(" ").append(s2).append(" 
 
 ## Formatage de texte
 
-La méthode de classe [String.format](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-) permet de passer une chaîne de caractères
+La méthode de classe [String.format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-) permet de passer une chaîne de caractères
 décrivant un formatage ainsi que plusieurs objets correspondant à des paramètres
 du formatage.
 
@@ -349,13 +349,13 @@ System.out.println(message); // "Hello the world!"
 ```
 
 Dans l’exemple ci-dessus, la chaîne de formatage « Hello %s » contient un paramètre
-identifié par  *%s* (s signifie que le paramètre attendu est de type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html).
+identifié par  *%s* (s signifie que le paramètre attendu est de type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html).
 
 Un paramètre dans la chaîne de formatage peut contenir différente information :
 
 > %[index$][flags][taille]conversion
 
-L’index est la place du paramètre dans l’appel à la méthode [String.format](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-).
+L’index est la place du paramètre dans l’appel à la méthode [String.format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-).
 
 ```java
 int quantite = 12;
@@ -366,8 +366,8 @@ String message = String.format("quantité = %1$010d au %2$te %2$tB %2$tY", quant
 System.out.println(message); // "quantité = 0000000012 au 5 septembre 2017"
 ```
 
-Il existe également une définition de la méthode [String.format](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-) qui attend une
-instance de [Locale](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html) en premier paramètre. La locale indique la langue du message
+Il existe également une définition de la méthode [String.format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-) qui attend une
+instance de [Locale](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Locale.html) en premier paramètre. La locale indique la langue du message
 et permet de formater les nombres, les dates, etc comme attendu.
 
 ```java
@@ -380,21 +380,21 @@ System.out.println(message); // "quantity = 0000000012 on 5 september 2017"
 ```
 
 Pour mieux comprendre la syntaxe des paramètres dans une chaîne de formatage,
-reportez-vous à la documentation du [Formatter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html) qui est utilisé par la méthode
-[String.format](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-).
+reportez-vous à la documentation du [Formatter](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html) qui est utilisé par la méthode
+[String.format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#format-java.lang.String-java.lang.Object...-).
 
 #### NOTE
-Il est également possible de formater des messages avec la classe [MessageFormat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/MessageFormat.html).
+Il est également possible de formater des messages avec la classe [MessageFormat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/MessageFormat.html).
 Il s’agit d’une classe plus ancienne qui offre une syntaxe différente pour décrire
 les paramètres dans la chaîne de formatage.
 
 ## Les expressions régulières
 
-Certaines méthodes de la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) acceptent comme paramètre une [expression
-régulière](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html#sum) (*regular expression* ou *regexp*). Une expression régulière permet
+Certaines méthodes de la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) acceptent comme paramètre une [expression
+régulière](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html#sum) (*regular expression* ou *regexp*). Une expression régulière permet
 d’exprimer avec des motifs un ensemble
-de chaînes de caractères possibles. Par exemple la méthode [String.matches](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#matches-java.lang.String-) prend
-un paramètre de type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) qui est interprété comme une expression régulière.
+de chaînes de caractères possibles. Par exemple la méthode [String.matches](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#matches-java.lang.String-) prend
+un paramètre de type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) qui est interprété comme une expression régulière.
 Cette méthode retourne **true** si la chaîne de caractères est conforme à l’expression
 régulière passée en paramètre.
 
@@ -451,9 +451,9 @@ System.out.println(s.matches("[eh]{0,2}l{1,100}o")); // true
 
 #### NOTE
 Il existe beaucoup d’autres motifs qui peuvent être utilisés dans une expression
-régulière. Reportez-vous à la [documentation Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html#sum).
+régulière. Reportez-vous à la [documentation Java](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html#sum).
 
-Il est possible d’utiliser la méthode [String.replaceFirst](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#replaceFirst-java.lang.String-java.lang.String-) ou [String.replaceAll](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+Il est possible d’utiliser la méthode [String.replaceFirst](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replaceFirst-java.lang.String-java.lang.String-) ou [String.replaceAll](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
 pour remplacer respectivement la première ou toutes les occurrences d’une
 séquence de caractères définie par une expression régulière.
 
@@ -462,7 +462,7 @@ String s = "hello";
 System.out.println(s.replaceAll("[aeiouy]", "^_^")); // h^_^ll^_^
 ```
 
-La méthode [String.split](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#split-java.lang.String-) permet de découper une chaîne de caractères en tableau
+La méthode [String.split](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#split-java.lang.String-) permet de découper une chaîne de caractères en tableau
 de chaînes de caractère en utilisant une expression régulière pour identifier
 le séparateur.
 
@@ -480,6 +480,6 @@ tab = s.split("[ol]");
 ```
 
 #### NOTE
-Les expressions régulières sont représentées en Java par la classe [Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html).
+Les expressions régulières sont représentées en Java par la classe [Pattern](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html).
 Il est possible de créer des instances de cette classe en compilant une
-expression régulière à l’aide de la méthode de classe [Pattern.compile](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html#compile-java.lang.String-).
+expression régulière à l’aide de la méthode de classe [Pattern.compile](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html#compile-java.lang.String-).

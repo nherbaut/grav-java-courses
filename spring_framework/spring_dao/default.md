@@ -94,7 +94,7 @@ Pour activer JPA, il faut configurer le contexte d’application avec
 
 Un apport du module *Spring Data Access* est d’uniformiser la hiérarchie des exceptions.
 En effet, l’API JDBC utilise des exceptions héritant
-de [SQLException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/SQLException.html) qui est une *checked* exception. JPA utilise des *unechecked*
+de [SQLException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/SQLException.html) qui est une *checked* exception. JPA utilise des *unechecked*
 exceptions héritant de [PersistenceException](https://docs.oracle.com/javaee/7/api/javax/persistence/PersistenceException.html). D’autres bibliothèques ou
 *frameworks* proposent à leur tour leur propre hiérarchie d’exceptions.
 
@@ -105,7 +105,7 @@ la gestion des erreurs pour les applications.
 ![Hiérarchie des exceptions](spring_framework/assets/spring_data_exceptions.png)
 
 À la base de cette hiérarchie, la classe [DataAccessException](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/dao/DataAccessException.html) est une *unchecked*
-exception (elle hérite de [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html)).
+exception (elle hérite de [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html)).
 
 Pour une application utilisant JPA, l’uniformisation de la hiérarchie des exceptions
 n’est pas activée par défaut. Pour l’activer, il faut utiliser l’annotation
@@ -121,10 +121,10 @@ n’est pas activée par défaut. Pour l’activer, il faut utiliser l’annotat
 *Spring Data Access* fournit la classe [JdbcTemplate](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html) pour encapsuler les appels
 JDBC. Cette classe est simplement une classe utilitaire qui réalise :
 
-* la traduction d’une éventuelle [SQLException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/SQLException.html) dans la hiérarchie uniformisée des
+* la traduction d’une éventuelle [SQLException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/SQLException.html) dans la hiérarchie uniformisée des
   exceptions de *Spring Data Access*
-* l’encapsulation des appels à [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html) et [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html)
-* une aide pour la création d’objets à partir d’un [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html)
+* l’encapsulation des appels à [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html) et [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html)
+* une aide pour la création d’objets à partir d’un [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html)
 
 #### NOTE
 Pour activer ce support avancé de JDBC, il faut ajouter comme dépendance Maven :
@@ -244,7 +244,7 @@ La classe [JdbcTemplate](https://docs.spring.io/spring/docs/current/javadoc-api/
 
 Dans l’exemple ci-dessus, la classe interne `UserRowMapper` implémente
 l’interface [RowMapper<T>](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/RowMapper.html) qui permet de transformer une ligne retournée par
-un [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html) en objet.
+un [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html) en objet.
 
 Spring Data Access fournit également la classe utilitaire [SimpleJdbcInsert](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcInsert.html)
 pour faciliter la génération de requête d’insertion :

@@ -43,26 +43,26 @@ On utilise alors le mécanisme des exceptions.
 ## Qu’est-ce qu’une exception ?
 
 Une exception est une classe Java qui représente un état particulier et qui
-hérite directement ou indirectement de la classe [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html). Par convention, le
+hérite directement ou indirectement de la classe [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html). Par convention, le
 nom de la classe doit permettre de comprendre le type d’exception et doit
 se terminer par Exception.
 
 Exemple de classes d’exception fournies par l’API standard :
 
-[NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html)
+[NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html)
 : Signale qu’une référence **null** est utilisée pour invoquer une méthode
   ou accéder à un attribut.
 
-[NumberFormatException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NumberFormatException.html)
+[NumberFormatException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NumberFormatException.html)
 : Signale qu’il n’est pas possible de convertir une chaîne de caractères en nombre
   car la chaîne de caractère ne correspond pas à un nombre valide.
 
-[IndexOutOfBoundsException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IndexOutOfBoundsException.html)
+[IndexOutOfBoundsException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IndexOutOfBoundsException.html)
 : Signale que l’on tente d’accéder à un indice de tableau en dehors des valeurs
   permises.
 
 Pour créer sa propre exception, il suffit de créer une classe héritant
-de la classe [java.lang.Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html).
+de la classe [java.lang.Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html).
 
 ```java
 public class FinDuMondeException extends Exception {
@@ -77,7 +77,7 @@ public class FinDuMondeException extends Exception {
 ```
 
 #### NOTE
-La classe [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) fournit plusieurs constructeurs que l’on peut ou non
+La classe [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) fournit plusieurs constructeurs que l’on peut ou non
 appeler depuis la classe fille.
 
 Une exception étant un objet, elle possède son propre état et peut ainsi stocker
@@ -127,9 +127,9 @@ if(isPlanDiaboliqueReussi()) {
 ```
 
 #### NOTE
-La classe [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) hérite de la classe [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html). Le mot-clé **throw**
+La classe [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) hérite de la classe [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html). Le mot-clé **throw**
 peut en fait être utilisé avec n’importe quelle instance qui hérite
-directement ou indirectement de [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html).
+directement ou indirectement de [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html).
 
 Jeter une exception signifie que le flot d’exécution normal de la méthode
 est interrompu jusqu’au point de traitement de l’exception. Si aucun point
@@ -165,7 +165,7 @@ try {
 ```
 
 Dans l’exemple ci-dessus, si la variable *heros* vaut **null** alors le traitement
-du bloc **try** est interrompu à la ligne 3 par une [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html).
+du bloc **try** est interrompu à la ligne 3 par une [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html).
 Sinon le bloc continue à s’exécuter. La ligne 13 ne sera exécutée que si la condition
 à la ligne 9 est fausse. Par contre, si cette condition est vraie, le traitement
 du bloc est interrompu par le lancement d’une *FinDuMondeException* et le
@@ -200,8 +200,8 @@ try {
 ```
 
 Dans le code ci-dessus, le bloc **catch** est associé aux exceptions de type
-[Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html). Comme toutes les exceptions en Java hérite directement ou indirectement
-de cette classe, ce bloc sera exécuté pour traité la [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html) à
+[Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html). Comme toutes les exceptions en Java hérite directement ou indirectement
+de cette classe, ce bloc sera exécuté pour traité la [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html) à
 la ligne 3 ou la *FinDuMondeException* à la ligne 10.
 
 Les blocs **catch** sont pris en compte à l’exécution dans l’ordre de leur
@@ -230,7 +230,7 @@ try {
 }
 ```
 
-Dans, l’exemple précédent, il faut bien comprendre que [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) est la classe
+Dans, l’exemple précédent, il faut bien comprendre que [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) est la classe
 parente de *FinDuMondeException*. Donc si une exception de type *FinDuMondeException*
 est lancée, alors seul le premier bloc **catch** sera exécuté. Le second est
 donc simplement du code mort est générera une erreur de compilation. Pour
@@ -265,9 +265,9 @@ bloc **catch** fournit un traitement pour les autres exceptions.
 Parfois, le code du bloc **catch** est identique pour différents types d’exception.
 Si ces exceptions ont une classe parente commune, il est possible de déclarer
 un bloc **catch** simplement pour cette classe parente afin d’éviter la duplication
-de code. Dans notre exemple, la classe ancêtre commune entre [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html)
-et *FinDuMondeException* est la classe [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html). Donc si nous déclarons un bloc
-**catch** pour le type [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html), nous fournissons un bloc de traitement pour
+de code. Dans notre exemple, la classe ancêtre commune entre [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html)
+et *FinDuMondeException* est la classe [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html). Donc si nous déclarons un bloc
+**catch** pour le type [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html), nous fournissons un bloc de traitement pour
 tous les types d’exception, ce qui n’est pas vraiment le but recherché. Dans
 cette situation, il est possible de préciser plusieurs types d’exception dans
 le bloc **catch** en les séparant par **|** :
@@ -531,7 +531,7 @@ try (java.io.FileReader reader = new java.io.FileReader(filename)) {
 
 Après le mot-clé **try**, on déclare entre parenthèse une ou plusieurs
 initialisations de variable. Ces variables doivent être d’un type qui implémente
-l’interface [AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html) ou [Closeable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html). Ces interfaces ne déclarent qu’une
+l’interface [AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html) ou [Closeable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Closeable.html). Ces interfaces ne déclarent qu’une
 seule méthode : **close**. Le compilateur ajoute automatiquement
 un bloc **finally** à la suite du bloc **try** pour appeler la méthode **close**
 sur chacune des variables qui ne valent pas **null**.
@@ -571,7 +571,7 @@ en Java.
 
 La hiérarchie d’exception permet de grouper des erreurs en concevant des types d’exception
 de plus en plus généraux. Une application pourra donc traiter à sa convenance des exceptions générales
-comme [IOException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html) mais pourra, au besoin, fournir une bloc **catch** pour
+comme [IOException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html) mais pourra, au besoin, fournir une bloc **catch** pour
 traiter des exceptions plus spécifiques.
 
 ```java
@@ -595,7 +595,7 @@ try {
 Il est souvent utile d’encapsuler une exception dans une autre exception.
 Par exemple, imaginons une méthode qui souhaite réaliser une opération distante
 sur un serveur. Se le serveur distant n’est pas joignable, le programme devra
-intercepter une [IOException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html). Mais cela n’a peut-être pas beaucoup de sens pour
+intercepter une [IOException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html). Mais cela n’a peut-être pas beaucoup de sens pour
 le reste du programme, la méthode peut décider de jeter à la place une exception définit
 par l’application comme une *OperationNonDisponibleException*.
 
@@ -608,7 +608,7 @@ public class OperationNonDisponibleException extends Exception {
 }
 ```
 
-Cette exception n’a pas de lien d’héritage avec une [IOException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html). Par contre, elle
+Cette exception n’a pas de lien d’héritage avec une [IOException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html). Par contre, elle
 expose un constructeur qui accepte en paramètre une exception. Cela permet d’indiquer
 que l’exception a été causée par une autre exception.
 
@@ -622,7 +622,7 @@ try {
 }
 ```
 
-La classe [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) fournit la méthode [getCause](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html#getCause--) (qu’elle hérite de [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html))
+La classe [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) fournit la méthode [getCause](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#getCause--) (qu’elle hérite de [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html))
 pour connaître l’exception qui est la cause du problème.
 
 ## Les erreurs et les exceptions runtime
@@ -632,9 +632,9 @@ le modèle d’héritage suivant :
 
 ![image](langage_java/images/exceptions/hierarchie_exception.png)
 
-La classe [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html) est la classe indiquant qu’il est possible d’utiliser ce type
-avec le mot clé **throw**. De plus la classe [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html) fournit des méthodes utilitaires.
-Par exemple, la méthode [printStackTrace](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html#printStackTrace--) permet d’afficher sur la sortie d’erreur
+La classe [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html) est la classe indiquant qu’il est possible d’utiliser ce type
+avec le mot clé **throw**. De plus la classe [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html) fournit des méthodes utilitaires.
+Par exemple, la méthode [printStackTrace](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#printStackTrace--) permet d’afficher sur la sortie d’erreur
 standard la pile d’appel de l’application.
 
 ```java
@@ -646,33 +646,33 @@ try {
 }
 ```
 
-La classe [Error](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html) hérite de [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html) comme [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html). [Error](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html) est la classe de base
+La classe [Error](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html) hérite de [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html) comme [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html). [Error](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html) est la classe de base
 pour représenter les erreurs sérieuses que l’application ne devrait pas intercepter.
 Lorsqu’une erreur survient cela signifie souvent que l’environnement d’exécution
-est dans un état instable. Par exemple, la classe [OutOfMemoryError](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/OutOfMemoryError.html) hérite
+est dans un état instable. Par exemple, la classe [OutOfMemoryError](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/OutOfMemoryError.html) hérite
 indirectement de cette classe. Cette erreur signale que la JVM ne dispose plus d’assez
 de mémoire (généralement pour allouer de l’espace pour les nouveaux objets).
 
-La classe [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html) représente des problèmes d’exécution qui proviennent
+La classe [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html) représente des problèmes d’exécution qui proviennent
 la plupart du temps de bug dans l’application. Parmi les classes filles de cette
 classe, on trouve :
 
-[ArithmeticException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html)
+[ArithmeticException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ArithmeticException.html)
 : signale une opération arithmetique invalide comme une division par zéro.
 
-[NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html)
+[NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html)
 : signale que l’on tente d’accéder à une méthode ou un attribut à travers une
   référence **null**.
 
-[ClassCastException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassCastException.html)
+[ClassCastException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassCastException.html)
 : signale qu’un transtypage invalide a été réalisé.
 
-Généralement, les exceptions qui héritent de [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html) ne sont pas
+Généralement, les exceptions qui héritent de [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html) ne sont pas
 interceptées ni traitées par l’application. Au mieux, elles sont interceptées
 au plus haut de la pile d’appel pour signaler une erreur à l’utilisateur ou dans
 les fichiers de log.
 
-Les classes [Error](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html), [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html) et toutes les classes qui en héritent
+Les classes [Error](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html), [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html) et toutes les classes qui en héritent
 sont appelées des *unchecked exceptions*. Cela signifie que le compilateur
 n’exige pas que ces exceptions apparaissent dans la signature des méthodes.
 En effet, elles représentent des problèmes internes graves de la JVM ou des
@@ -681,7 +681,7 @@ lancer de telles exceptions.
 
 Si nous reprenons notre exemple des véhicules, les méthodes pour accélérer
 et décélerer devraient contrôler que le paramètre passé est bien un nombre
-positif. Si ce n’est pas le cas, elle peut jeter une [IllegalArgumentException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html)
+positif. Si ce n’est pas le cas, elle peut jeter une [IllegalArgumentException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html)
 qui est une exception runtime fournie par l’API standard et qui sert à signaler
 qu’un paramètre est invalide. Cette exception ne doit pas être obligatoirement
 déclarée dans la signature de la méthode.
@@ -744,13 +744,13 @@ doit le signaler dans sa signature à l’aide du mot-clé **throws**.
 ## Choix entre checked et unchecked
 
 En tant que développeurs, lorsque nous créons de nouvelles classes pour représenter
-des exceptions, nous avons le choix entre hériter de la classe [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html) ou
-de la classe [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html). C’est-à-dire entre créer une *checked* ou
+des exceptions, nous avons le choix entre hériter de la classe [Exception](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html) ou
+de la classe [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html). C’est-à-dire entre créer une *checked* ou
 une *unchecked* exception. La frontière entre les deux familles a évolué
 au cours des versions de Java.
 
 #### NOTE
-Il ne faut jamais créer un classe qui hérite de [Error](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html). Les classes qui en héritent
+Il ne faut jamais créer un classe qui hérite de [Error](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html). Les classes qui en héritent
 sont faites pour signaler un problème dans la JVM.
 
 On considère généralement qu’il est préférable de créer une *unchecked exception*
@@ -761,7 +761,7 @@ traiter correctement à part signaler un problème aux utilisateurs ou aux admin
 Par exemple, si votre application se connecte à un service distant, vous
 pouvez avoir besoin de créer une exception *RemoteServiceUnavailableException*
 pour signaler que le service ne répond pas. Ce type d’exception est probablement
-une *unchecked exception* et devrait hériter de [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html).
+une *unchecked exception* et devrait hériter de [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html).
 
 Par contre, les exceptions qui peuvent avoir une valeur pour le domaine
 applicatif devraient être des *checked exception*. Généralement, elles

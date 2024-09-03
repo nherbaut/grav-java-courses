@@ -13,8 +13,8 @@ Néanmoins, JDBC a quelques inconvénients :
   des applications plus volumineuses, la quantité de code nécessaire
   (notamment SQL) peut devenir une source de ralentissement du
   développement.
-- la gestion des nombreuses ressources ([Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html), [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html),
-  [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html)) est une source permanente de bugs pour les
+- la gestion des nombreuses ressources ([Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html), [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html),
+  [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html)) est une source permanente de bugs pour les
   développeurs. Il est donc très facile d’écrire des applications qui
   perdent des ressources.
 - JDBC n’offre qu’un service limité : un système d’échange avec une
@@ -99,18 +99,18 @@ pour définir une entité et ses attributs :
 [@Id](https://docs.oracle.com/javaee/7/api/javax/persistence/Id.html)
 : Définit l’attribut qui sert de clé primaire dans la table. Il est recommandé
   au départ d’utiliser un type primitif, un wrapper de type primitif ou une
-  [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) pour représenter un id. Pour les clés composites,
+  [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) pour représenter un id. Pour les clés composites,
   la mise en œuvre est plus compliquée. Afin  de ne pas se compliquer
   inutilement la tâche, il vaut mieux prévoir une clé simple pour chaque entité.
 
 [@Basic](https://docs.oracle.com/javaee/7/api/javax/persistence/Basic.html)
 : Définit un mapping simple pour un attribut (par exemple `VARCHAR` pour
-  [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)). Si on ne souhaite pas changer la valeur des attributs par défaut
+  [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)). Si on ne souhaite pas changer la valeur des attributs par défaut
   de cette annotation, alors il est possible de ne pas la spécifier
   puisqu’elle représente le mapping par défaut.
 
 [@Temporal](https://docs.oracle.com/javaee/7/api/javax/persistence/Temporal.html)
-: Pour un attribut de type [java.util.Date](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html) et [java.util.Calendar](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Calendar.html), cette
+: Pour un attribut de type [java.util.Date](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Date.html) et [java.util.Calendar](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Calendar.html), cette
   annotation permet de préciser le type de mapping vers le type SQL (DATE,
   TIME ou TIMESTAMP).
 

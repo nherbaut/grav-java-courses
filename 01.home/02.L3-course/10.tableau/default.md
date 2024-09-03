@@ -113,7 +113,7 @@ int[] tableau = new int[0];
 
 Par contre, donner une taille négative est autorisé par le compilateur
 mais aboutira à une erreur d’exécution avec une exception de type
-[java.lang.NegativeArraySizeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NegativeArraySizeException.html).
+[java.lang.NegativeArraySizeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NegativeArraySizeException.html).
 
 ## Accès aux éléments d’un tableau
 
@@ -155,7 +155,7 @@ Par contre, il n’est pas possible avec un **for** amélioré de connaître l�
 de l’élément courant.
 
 Si le programme tente d’accéder à un indice de tableau trop grand (ou un indice
-négatif), une erreur de type [java.lang.ArrayIndexOutOfBoundsException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArrayIndexOutOfBoundsException.html) survient.
+négatif), une erreur de type [java.lang.ArrayIndexOutOfBoundsException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ArrayIndexOutOfBoundsException.html) survient.
 
 ```java
 int[] tableau = {1, 2, 3, 4, 5};
@@ -218,7 +218,7 @@ correspond au nom de sa classe. Mais le type d’un tableau est noté **[** suiv
 du type des éléments du tableau (**I** indique le type primitif **int**).
 
 Pour obtenir une chaîne de caractères donnant le contenu du tableau, il faut
-utiliser la classe outil [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) qui contient des méthodes de classe
+utiliser la classe outil [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) qui contient des méthodes de classe
 **toString** adaptées pour les tableaux.
 
 ```java
@@ -228,7 +228,7 @@ System.out.println(java.util.Arrays.toString(tableau));
 
 #### NOTE
 Pour les tableaux multi-dimensionnels, vous pouvez utiliser la méthode
-[java.util.Arrays.deepToString(Object[])](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#deepToString-java.lang.Object:A-).
+[java.util.Arrays.deepToString(Object[])](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#deepToString-java.lang.Object:A-).
 
 ## Égalité de deux tableaux
 
@@ -257,7 +257,7 @@ System.out.println(tableau1.equals(tableau1)); // true
 System.out.println(tableau1.equals(tableau2)); // false
 ```
 
-La classe outil [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) fournit des méthodes de classe **equals**
+La classe outil [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) fournit des méthodes de classe **equals**
 pour comparer des tableaux en comparant un à un leurs éléments.
 
 ```java
@@ -278,7 +278,7 @@ public boolean equals(Object obj) {
 }
 ```
 
-Par exemple, la classe [java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) fournit une implémentation de la méthode
+Par exemple, la classe [java.lang.String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) fournit une implémentation de la méthode
 **equals**. Il est donc possible de comparer des tableaux de chaînes de caractères.
 
 ```java
@@ -290,15 +290,15 @@ System.out.println(java.util.Arrays.equals(tableau1, tableau2)); // true
 
 #### NOTE
 Pour les tableaux multi-dimensionnels, vous pouvez utiliser la méthode
-[java.util.Arrays.deepEquals(Object[], Object[])](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#deepEquals-java.lang.Object:A-java.lang.Object:A-)
+[java.util.Arrays.deepEquals(Object[], Object[])](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#deepEquals-java.lang.Object:A-java.lang.Object:A-)
 
 ## Tri & recherche
 
 Le tri et la recherche sont des opérations courantes sur des tableaux de valeurs.
-La classe outil [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) offrent un ensemble de méthodes de classe pour
+La classe outil [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) offrent un ensemble de méthodes de classe pour
 nous aider dans ces opérations.
 
-Tout d’abord, [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) fournit plusieurs méthodes **sort**. Celles
+Tout d’abord, [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) fournit plusieurs méthodes **sort**. Celles
 prenant un tableau de primitives en paramètre trient selon l’ordre naturel
 des éléments.
 
@@ -318,10 +318,10 @@ System.out.println(java.util.Arrays.toString(tableau));
 ```
 
 #### NOTE
-La méthode [java.util.Arrays.sort(Object[])](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#sort-java.lang.Object:A-) permet de trier des tableaux
-d’objets dont la classe implémente l’interface [java.lang.Comparable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html).
+La méthode [java.util.Arrays.sort(Object[])](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#sort-java.lang.Object:A-) permet de trier des tableaux
+d’objets dont la classe implémente l’interface [java.lang.Comparable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html).
 
-[java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) fournit des méthodes **binarySearch** qui implémentent l’algorithme
+[java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) fournit des méthodes **binarySearch** qui implémentent l’algorithme
 de recherche binaire. Ces méthodes attendent comme paramètres un tableau et une valeur
 compatible avec le type des éléments du tableau. Ces méthodes retournent l’index
 de la valeur trouvée. Si la valeur n’est pas dans le tableau, alors ces méthodes
@@ -341,7 +341,7 @@ trié.
 ## Copie d’un tableau
 
 Comme il n’est pas possible de modifier la taille d’un tableau, la copie peut
-s’avérer une opération utile. [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) fournit des méthodes de classe
+s’avérer une opération utile. [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) fournit des méthodes de classe
 *copyOf* et *copyOfRange* pour réaliser des copies de tableaux.
 
 ```java
@@ -360,7 +360,7 @@ nouveauTableau = java.util.Arrays.copyOfRange(tableau, 2, 3);
 System.out.println(java.util.Arrays.toString(nouveauTableau)); // [3]
 ```
 
-Pour réaliser une copie, il existe également la méthode [java.lang.System.arraycopy](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#arraycopy-java.lang.Object-int-java.lang.Object-int-int-).
+Pour réaliser une copie, il existe également la méthode [java.lang.System.arraycopy](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#arraycopy-java.lang.Object-int-java.lang.Object-int-int-).
 Contrairement aux précédentes, cette méthode ne crée pas de nouveau tableau,
 elle copie d’un tableau existant vers un autre tableau existant.
 
@@ -399,13 +399,13 @@ Integer[] tableau = {1, 2, 3, 4};
 Number[] tableauNumber = tableau;
 ```
 
-Pour l’exemple précédent, il faut se rappeler la classe enveloppe [java.lang.Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html)
-hérite de la classe [java.lang.Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html). Cependant, un tableau conserve son type
+Pour l’exemple précédent, il faut se rappeler la classe enveloppe [java.lang.Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
+hérite de la classe [java.lang.Number](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html). Cependant, un tableau conserve son type
 d’origine : si on affecte une valeur dans un tableau, elle doit non seulement
 être compatible avec le type de la variable (pour passer la compilation)
 mais aussi être compatible avec le type de tableau à l’exécution.
 Si cette dernière condition n’est pas remplie, on obtiendra une erreur de type
-[java.lang.ArrayStoreException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArrayStoreException.html) au moment de l’exécution.
+[java.lang.ArrayStoreException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ArrayStoreException.html) au moment de l’exécution.
 
 ```java
 Integer[] tableau = {1};
@@ -416,7 +416,7 @@ tableauNumber[0] = Float.valueOf(2.3f); // ERREUR À L'EXÉCUTION
 ## Conversion d’un tableau en liste
 
 La plupart des API Java utilisent des [collections](les_collections/) plutôt que des tableaux.
-Pour transformer un tableau d’objets en liste, on utilise la méthode [java.util.Arrays.asList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#asList-T...-).
+Pour transformer un tableau d’objets en liste, on utilise la méthode [java.util.Arrays.asList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#asList-T...-).
 La liste obtenue possède une taille fixe. Par contre le contenu de la liste est modifiable,
 et toute modification des éléments de cette liste sera répercutée sur le tableau.
 

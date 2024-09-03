@@ -161,7 +161,7 @@ L’opérateur spécial `T()` permet d’indiquer dans une expression que l’on
 référence une classe est non pas un *bean*.
 
 Il est possible de manipuler le contenu de tableaux, de listes ou de dictionnaires
-([Map](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html)) grâce à l’opérateur `[]`. Il existe un objet implicite nommé « systemProperties »
+([Map](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)) grâce à l’opérateur `[]`. Il existe un objet implicite nommé « systemProperties »
 qui correspond à un dictionnaire des propriétés systèmes au moment de l’exécution
 de la JVM. L’expression suivante :
 
@@ -173,7 +173,7 @@ Retourne la valeur de la propriété système « user.name » qui correspond a
 de la session utilisateur qui exécute la JVM.
 
 Il est également possible de créer dans une expression, un tableau, une liste ou
-un dictionnaire ([Map](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html)) :
+un dictionnaire ([Map](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)) :
 
 ```text
 #{ {1,2,3,4} }

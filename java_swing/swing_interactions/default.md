@@ -9,7 +9,7 @@ Pour interagir avec l’utilisateur, chaque composant graphique peut intercepter
 des événements (frappe d’une touche sur le clavier, clic souris…) et réagir
 en conséquence. Pour associer un comportement à un événement, on ajoute un
 écouteur d’événement (*listener*) au composant, c’est-à-dire un objet
-qui implémente l’interface [EventListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/EventListener.html). Cette interface est simplement une
+qui implémente l’interface [EventListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/EventListener.html). Cette interface est simplement une
 [interface marqueur](../langage_java/interface.md#interface-marqueur) dont héritent toutes les interfaces
 qui représentent des *listeners* pour des événements particuliers.
 
@@ -106,21 +106,21 @@ public class ExempleListener extends JFrame {
 
 Dans l’exemple ci-dessus, l’application affiche un éditeur de texte sous la forme
 d’un carré de 300 pixels sur 300 pixels. Aux lignes 72 et 73, on ajoute à ce composant
-une instance de [MouseListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/MouseListener.html) et une instance de [KeyListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/KeyListener.html) (les classes
+une instance de [MouseListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/MouseListener.html) et une instance de [KeyListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/KeyListener.html) (les classes
 implémentant ces interfaces sont déclarées sous la forme de classes internes). Ces
 *listeners* se contentent d’afficher sur la sortie standard la représentation
 sous forme de chaîne de caractères de chaque événement.
 
 Chaque événement fournit des informations liées à son origine. Par exemple, un
-[MouseEvent](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/MouseEvent.html) indique si un bouton de la souris est pressé. Un [KeyEvent](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/KeyEvent.html) indique
+[MouseEvent](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/MouseEvent.html) indique si un bouton de la souris est pressé. Un [KeyEvent](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/KeyEvent.html) indique
 la touche du clavier qui est soit pressée soit relâchée. Un composant peut utiliser
 ces informations pour modifier son état. Ainsi, la classe [JEditorPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JEditorPane.html), utilisée
-dans l’exemple précédent, enregistre en interne un [KeyListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/KeyListener.html) pour savoir
+dans l’exemple précédent, enregistre en interne un [KeyListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/KeyListener.html) pour savoir
 si une touche a été pressée et en déduit le caractère qui doit être ajouté dans
 l’éditeur.
 
-Un *listener* couramment utilisé est le type [ActionListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionListener.html). Ce *listener*
-écoute les événements de type [ActionEvent](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionEvent.html). Un [ActionEvent](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionEvent.html) représente
+Un *listener* couramment utilisé est le type [ActionListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionListener.html). Ce *listener*
+écoute les événements de type [ActionEvent](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionEvent.html). Un [ActionEvent](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionEvent.html) représente
 une interaction utilisateur simple. Il est associé à une commande qui est
 un simple identifiant sous la forme d’une chaîne de caractères. Les boutons
 acceptent des *listeners* de ce type.
@@ -244,13 +244,13 @@ public class ExempleActionListener extends JFrame {
 ```
 
 Le code ci-dessus reprend l’application de saisie de formulaire qui utilisait
-le [GridBagLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridBagLayout.html) dans le [chapitre précédent](swing_interfaces_graphiques.md#swinggridbaglayout). Entre les lignes 44 et 58, on crée les boutons de l’application
-en ajoutant des instances de [ActionListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionListener.html) sous la forme de classes anonymes. Lorsque
+le [GridBagLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridBagLayout.html) dans le [chapitre précédent](swing_interfaces_graphiques.md#swinggridbaglayout). Entre les lignes 44 et 58, on crée les boutons de l’application
+en ajoutant des instances de [ActionListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionListener.html) sous la forme de classes anonymes. Lorsque
 l’utilisateur clique sur le bouton *Ok* (respectivement *Annuler*), la méthode
 privée *onOk* (respectivement *onCancel*) est appelée. La méthode *onOk* (lignes
 64-68) affiche sur la sortie standard les informations récupérées des différentes
 zones de saisie. La méthode *onCancel* (lignes 70-75) cache la fenêtre et appelle
-la méthode [dispose](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Window.html#dispose--) pour la détruire.
+la méthode [dispose](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Window.html#dispose--) pour la détruire.
 
 ## Les menus
 
@@ -352,9 +352,9 @@ d’entrée.
 
 ![image](java_swing/images/swing/exemple_menus.png)
 
-Dans une application complète, il faudrait ajouter un [ActionListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionListener.html)
+Dans une application complète, il faudrait ajouter un [ActionListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionListener.html)
 pour chaque entrée des menus. Dans cet exemple, seul le menu *Fermer* a un
-[ActionListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionListener.html) pour terminer l’application.
+[ActionListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionListener.html) pour terminer l’application.
 
 ## L’interface Action
 
@@ -368,11 +368,11 @@ plusieurs façons par un utilisateur :
 
 Swing permet de gérer ce phénomène grâce à l’interface [Action](https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html). Plutôt que d’ajouter
 un *listener*, il est possible d’associer une action à une objet de type [JMenuItem](https://docs.oracle.com/javase/8/docs/api/javax/swing/JMenuItem.html) ou
-[JButton](https://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html). L’interface [Action](https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html) hérite de [ActionListener](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionListener.html) pour pouvoir fournir un
+[JButton](https://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html). L’interface [Action](https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html) hérite de [ActionListener](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionListener.html) pour pouvoir fournir un
 comportement lorsque l’utilisateur clique sur un bouton. Mais l’interface [Action](https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html)
 permet également de définir un libellé, une icône, une description et un raccourci
 clavier. Tous les composants associés s’adapteront en fonction de l’état de l’action.
-Si une action est désactivée avec sa méthode [setEnabled](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Component.html#setEnabled-boolean-) alors tous les boutons
+Si une action est désactivée avec sa méthode [setEnabled](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Component.html#setEnabled-boolean-) alors tous les boutons
 associés apparaîtront grisés.
 
 ```java
@@ -473,7 +473,7 @@ Dans l’exemple ci-dessus, on déclare une action comme classe interne. Plutôt
 que d’implémenter l’interface [Action](https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html), la classe interne *ExempleAction*
 étend la classe abstraite [AbstractAction](https://docs.oracle.com/javase/8/docs/api/javax/swing/AbstractAction.html). Comme l’interface [Action](https://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html) peut
 être assez complexe à implémenter, cette classe abstraite fournit la plus grande
-partie du code hormis l’implémentation de la méthode [actionPerformed](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/ActionListener.html#actionPerformed-java.awt.event.ActionEvent-) qui
+partie du code hormis l’implémentation de la méthode [actionPerformed](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/ActionListener.html#actionPerformed-java.awt.event.ActionEvent-) qui
 correspond au traitement proprement dit.
 
 L’action déclarée par notre application possède un nom, une description

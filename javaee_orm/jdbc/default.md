@@ -12,11 +12,11 @@ méthodes *close()*. Ne pas fermer correctement les objets fournis par JDBC est 
 bug qui conduit habituellement à un épuisement des ressources système, empêchant
 l’application de fonctionner correctement.
 
-Java 7 a introduit l’interface [AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html) ainsi qu’une nouvelle syntaxe
+Java 7 a introduit l’interface [AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html) ainsi qu’une nouvelle syntaxe
 dénommée [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html). L’API JDBC utilise massivement l’interface
-[AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html) et autorise donc le [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html). Ainsi, les deux codes
+[AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html) et autorise donc le [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html). Ainsi, les deux codes
 ci-dessous sont équivalents puisque la classe
-[java.sql.Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html) implémente [AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html) :
+[java.sql.Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html) implémente [AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html) :
 
 ```java
 try (java.sql.Connection connection = dataSource.getConnection()) {
@@ -58,12 +58,12 @@ On peut rechercher le pilote souhaité sur le site du [Maven Repository](http://
 ## Création d’une connexion
 
 Une connexion à une base de données est représentée par une instance de la
-classe [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html).
+classe [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html).
 
 Comme nous l’avons précisé au début de ce chapitre, JDBC fait partie de l’API
 standard du JDK. Toute application Java peut donc facilement contenir du code
 qui permet de se connecter à une base de données. Pour cela, il faut utiliser la
-classe [DriverManager](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/DriverManager.html) pour enregister un pilote JDBC et créer une connexion :
+classe [DriverManager](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/DriverManager.html) pour enregister un pilote JDBC et créer une connexion :
 
 ```java
 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
@@ -75,8 +75,8 @@ Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mysc
 ```
 
 Lorsque la connexion n’est plus nécessaire, il faut libérer les ressources
-allouées en la fermant avec la méthode *close()*. La classe [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html) implémente
-[AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html), ce qui l’autorise à être utilisée dans un [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html).
+allouées en la fermant avec la méthode *close()*. La classe [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html) implémente
+[AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html), ce qui l’autorise à être utilisée dans un [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html).
 
 ```java
 connection.close();
@@ -100,26 +100,26 @@ tableau suivant donne les informations nécessaires suivant le SGBDR :
 
 ## Les requêtes SQL (Statement)
 
-L’interface [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html) permet, entre autres, de créer des *Statements*. Un
+L’interface [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html) permet, entre autres, de créer des *Statements*. Un
 *Statement* est une interface qui permet d’effectuer des requêtes SQL.
 On distingue 3 types de Statement :
 
-> * [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html) : Permet d’exécuter une requête SQL et d’en connaître le résultat.
-> * [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) : Comme le [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html), le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) permet
+> * [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html) : Permet d’exécuter une requête SQL et d’en connaître le résultat.
+> * [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) : Comme le [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html), le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) permet
 >   d’exécuter une requête SQL et d’en connaître le résultat. Le
->   [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) est une requête paramétrable. Pour des raisons de
+>   [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) est une requête paramétrable. Pour des raisons de
 >   performance, on peut préparer une requête et ensuite l’exécuter autant de
->   fois que nécessaire en passant des paramètres différents. Le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html)
+>   fois que nécessaire en passant des paramètres différents. Le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html)
 >   est également pratique pour se prémunir efficacement des failles de sécurité
 >   par injection SQL.
-> * [CallableStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/CallableStatement.html) : permet d’exécuter des procédures stockées sur le SGBDR.
->   On peut ainsi passer des paramètres en entrée du [CallableStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/CallableStatement.html) et
+> * [CallableStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/CallableStatement.html) : permet d’exécuter des procédures stockées sur le SGBDR.
+>   On peut ainsi passer des paramètres en entrée du [CallableStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/CallableStatement.html) et
 >   récupérer les paramètres de sortie après exécution.
 
 ## Le Statement
 
-Un [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html) est créé à partir d’une des méthodes [createStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#createStatement--) de
-l’interface [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html). À partir d’un [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html), il est possible d’exécuter
+Un [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html) est créé à partir d’une des méthodes [createStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#createStatement--) de
+l’interface [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html). À partir d’un [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html), il est possible d’exécuter
 des requêtes SQL :
 
 ```java
@@ -140,7 +140,7 @@ stmt.executeUpdate("insert into myTable (col1, col2) values ('value1', 'value1')
 ```
 
 Pour des raisons de performance, il est également possible d’utiliser un
-[Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html) en mode batch. Cela signifie, que l’on accumule l’ensemble des requêtes
+[Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html) en mode batch. Cela signifie, que l’on accumule l’ensemble des requêtes
 SQL côté client, puis on les envoie en bloc au serveur plutôt que de les exécuter
 séquentiellement.
 
@@ -160,12 +160,12 @@ try {
 ## Le ResultSet
 
 Lorsqu’on exécute une requête SQL de type select, JDBC nous donne accès à une
-instance de [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html). Avec un [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html), il est possible de parcourir ligne
+instance de [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html). Avec un [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html), il est possible de parcourir ligne
 à ligne les résultats de la requête (comme avec un itérateur) grâce à la méthode
-[ResultSet.next](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html#next--). Pour chaque résultat, il est possible d’extraire les données
+[ResultSet.next](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html#next--). Pour chaque résultat, il est possible d’extraire les données
 dans un type supporté par Java.
 
-Le [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html) offre une liste de méthodes de la forme :
+Le [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html) offre une liste de méthodes de la forme :
 
 ```java
 ResultSet.getXXX(String columnName)
@@ -194,12 +194,12 @@ try (java.sql.Statement stmt = connection.createStatement();
 
 ## Le PreparedStatement
 
-Un [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) est créé à partir d’une des méthodes [prepareStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#prepareStatement-java.lang.String-) de
-l’interface [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html). Lors de l’appel à [prepareStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#prepareStatement-java.lang.String-), il faut passer la
+Un [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) est créé à partir d’une des méthodes [prepareStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#prepareStatement-java.lang.String-) de
+l’interface [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html). Lors de l’appel à [prepareStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#prepareStatement-java.lang.String-), il faut passer la
 requête SQL à exécuter. Cependant, cette requête peut contenir des **?**
 indiquant l’emplacement des paramètres.
 
-L’interface [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) fournit des méthodes de la forme :
+L’interface [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) fournit des méthodes de la forme :
 
 ```java
 PreparedStatement.setXXX(int parameterIndex, XXX x)
@@ -210,7 +210,7 @@ requête SQL (attention, le premier paramètre a l’indice **1**) et *x* sa val
 
 #### NOTE
 Pour positionner un paramètre SQL à *NULL*, il faut utiliser la méthode
-[setNull(int parameterIndex, int sqlType)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html#setNull-int-int-).
+[setNull(int parameterIndex, int sqlType)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html#setNull-int-int-).
 
 ```java
 String request = "insert into films (titre, date_sortie, duree) values (?, ?, ?)";
@@ -225,17 +225,17 @@ try (java.sql.PreparedStatement pstmt = connection.prepareStatement(request)) {
 }
 ```
 
-Le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) reprend une API similaire à celle du [Statement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html) :
+Le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) reprend une API similaire à celle du [Statement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html) :
 
-* une méthode [execute](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html#execute-java.lang.String-) pour tous les types de requête SQL
-* une méthode [executeQuery](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html#executeQuery-java.lang.String-) (qui retourne un [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html)) pour les requêtes SQL de type select
-* une méthode [executeUpdate](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html#executeUpdate-java.lang.String-) pour toutes les requêtes SQL qui ne sont pas des select
+* une méthode [execute](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html#execute-java.lang.String-) pour tous les types de requête SQL
+* une méthode [executeQuery](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html#executeQuery-java.lang.String-) (qui retourne un [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html)) pour les requêtes SQL de type select
+* une méthode [executeUpdate](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html#executeUpdate-java.lang.String-) pour toutes les requêtes SQL qui ne sont pas des select
 
-Le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html) offre trois avantages :
+Le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html) offre trois avantages :
 
 * il permet de convertir efficacement les types Java en types SQL pour les données en entrée
 * il permet d’améliorer les performances si on désire exécuter plusieurs fois la
-  même requête avec des paramètres différents. À noter que le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html)
+  même requête avec des paramètres différents. À noter que le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html)
   supporte lui aussi le mode batch
 * il permet de se prémunir de failles de sécurité telles que l’injection SQL
 
@@ -274,7 +274,7 @@ select * from users where login = '' or '' = '' and password = '' or '' = ''
 Cette requête SQL retourne toutes les lignes de la table users et l’utilisateur
 sera donc considéré comme autorisé par l’application.
 
-Si on modifie le code précédent pour utiliser un [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html), ce
+Si on modifie le code précédent pour utiliser un [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html), ce
 comportement non souhaité disparaît :
 
 ```java
@@ -292,7 +292,7 @@ public boolean isUserAuthorized(String login, String password) throws SQLExcepti
 }
 ```
 
-Avec un [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html), login et password sont maintenant des paramètres de
+Avec un [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html), login et password sont maintenant des paramètres de
 la requête SQL et ils ne peuvent pas en modifier sa structure. La requête exécutée
 sera équivalente à :
 
@@ -302,10 +302,10 @@ select * from users where login = ''' or '''' = ''' and password = ''' or '''' =
 
 ## Le CallableStatement
 
-Un [CallableStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/CallableStatement.html) permet d’appeler des procédures ou des fonctions stockées.
-Il est créé à partir d’une des méthodes [prepareCall](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#prepareCall-java.lang.String-) de l’interface [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html).
-Comme pour le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html), il est nécessaire de passer la requête lors de
-l’appel à [prepareCall](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#prepareCall-java.lang.String-) et l’utilisation de **?** permet de spécifier les paramètres.
+Un [CallableStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/CallableStatement.html) permet d’appeler des procédures ou des fonctions stockées.
+Il est créé à partir d’une des méthodes [prepareCall](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#prepareCall-java.lang.String-) de l’interface [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html).
+Comme pour le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html), il est nécessaire de passer la requête lors de
+l’appel à [prepareCall](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#prepareCall-java.lang.String-) et l’utilisation de **?** permet de spécifier les paramètres.
 
 Cependant, il n’existe pas de syntaxe standard en SQL pour appeler des procédures
 ou des fonctions stockées. JDBC définit tout de même une syntaxe compatible avec
@@ -319,11 +319,11 @@ tous les pilotes JDBC :
 {? = call nom_de_la_fonction(?, ?, ?, ...)}
 ```
 
-Un [CallableStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/CallableStatement.html) permet de passer des paramètres en entrée avec des méthodes
-de type *setXXX* comme pour le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html). Il permet également de récupérer
+Un [CallableStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/CallableStatement.html) permet de passer des paramètres en entrée avec des méthodes
+de type *setXXX* comme pour le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html). Il permet également de récupérer
 les paramètres en sortie avec des méthodes de type *getXXX* comme on peut trouver
-dans l’interface [ResultSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/ResultSet.html). Comme pour le [PreparedStatement](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/PreparedStatement.html), on retrouve les
-méthodes [execute](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html#execute-java.lang.String-), [executeUpdate](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html#executeUpdate-java.lang.String-) et [executeQuery](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Statement.html#executeQuery-java.lang.String-) pour réaliser l’appel à la
+dans l’interface [ResultSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/ResultSet.html). Comme pour le [PreparedStatement](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/PreparedStatement.html), on retrouve les
+méthodes [execute](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html#execute-java.lang.String-), [executeUpdate](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html#executeUpdate-java.lang.String-) et [executeQuery](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Statement.html#executeQuery-java.lang.String-) pour réaliser l’appel à la
 base de données.
 
 ```sql
@@ -380,13 +380,13 @@ la portion de code qui doit s’exécuter dans le cadre d’une transaction.
 Avec JDBC, il faut d’abord s’assurer que le pilote ne *commite* pas sytématiquement
 à chaque requête SQL (l’auto commit). Une opération de *commit* à chaque requête
 SQL équivaut en fait à ne pas avoir de démarcation transactionnelle. Sur l’interface
-[Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html), il existe les méthodes [setAutoCommit](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#setAutoCommit-boolean-) et [getAutoCommit](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#getAutoCommit--) pour nous
+[Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html), il existe les méthodes [setAutoCommit](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#setAutoCommit-boolean-) et [getAutoCommit](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#getAutoCommit--) pour nous
 aider à gérer ce comportement. Attention, dans la plupart des implémentations
 des pilotes JDBC, l’auto commit est activé par défaut (mais ce n’est pas une règle).
 
 À partir du moment où l’auto commit n’est plus actif sur une connexion, il est
-de la responsabilité du développeur d’appeler sur l’instance de [Connection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html) la
-méthode [commit](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#commit--) (ou [rollback](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/sql/Connection.html#rollback--)) pour marquer la fin de la transaction.
+de la responsabilité du développeur d’appeler sur l’instance de [Connection](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html) la
+méthode [commit](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#commit--) (ou [rollback](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/sql/Connection.html#rollback--)) pour marquer la fin de la transaction.
 
 Le contrôle de la démarcation transactionnelle par programmation est surtout
 utile lorsque l’on souhaite garantir l’atomicité d’un ensemble de requêtes SQL.

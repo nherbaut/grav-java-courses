@@ -359,7 +359,7 @@ comme nous l’avons vu dans [l’exemple sur la programmation AOP](aop.md#sprin
 
 Par défaut, une transaction est invalidée (*rollback*) uniquement si la méthode
 transactionnelle échoue à cause d’une *unchecked* exception (une exception
-héritant de [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html) ou une [Error](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html)). Dans tous les autres cas, la transaction
+héritant de [RuntimeException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html) ou une [Error](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html)). Dans tous les autres cas, la transaction
 est validée (un *commit* est effectué). Donc si une méthode se termine par une
 *checked* exception, Spring Transaction considère la transaction comme valide.
 
@@ -392,7 +392,7 @@ il suffit de configurer le greffon de la façon suivante :
 </tx:advice>
 ```
 
-En effet, [Throwable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html) est la classe mère de toutes les exceptions et de toutes
+En effet, [Throwable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html) est la classe mère de toutes les exceptions et de toutes
 les erreurs.
 
 #### NOTE

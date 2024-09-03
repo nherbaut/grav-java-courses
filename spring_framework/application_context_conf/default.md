@@ -18,7 +18,7 @@ mécanisme simple et puissant pour créer facilement des fichiers de configurati
 pour nos applications.
 
 Un [PropertyPlaceholderConfigurer](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.html) a au moins besoin de connaître le chemin du
-fichier [Properties](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html) qui contient les valeurs à substituer. Comme pour toutes les
+fichier [Properties](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html) qui contient les valeurs à substituer. Comme pour toutes les
 ressources accédées par le Spring Framework, ce fichier peut se trouver sur
 le système de fichier, dans le *classpath* voire même sur le Web. On peut
 ainsi déclarer un [PropertyPlaceholderConfigurer](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.html) de la façon suivante :

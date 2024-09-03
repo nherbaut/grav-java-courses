@@ -327,9 +327,9 @@ Even if the *Anthropophage* class doesn’t redefine any method of its parent
 class, declaring the marker interface *Cannibale* modifies its behavior.
 
 The marker interface principle is sometimes used in the standard Java API.
-For example, the [clone](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone--) method declared by [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) throws a
-[CloneNotSupportedException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CloneNotSupportedException.html) if called on an instance that doesn’t implement
-the [Cloneable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html) interface. This allows for a default method to create
+For example, the [clone](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone--) method declared by [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) throws a
+[CloneNotSupportedException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/CloneNotSupportedException.html) if called on an instance that doesn’t implement
+the [Cloneable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Cloneable.html) interface. This allows for a default method to create
 a copy of an object without enabling the functionality. The class
 must declare its intention to be cloneable using the marker interface.
 
@@ -440,12 +440,12 @@ In Java, the
 The first point implies that it’s preferable to manipulate objects through their interfaces
 rather than using the object’s actual type. A classic example in Java concerns the
 collections API. These are classes that manage a collection of objects,
-providing more advanced features than arrays. For example, the [java.util.ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html)
+providing more advanced features than arrays. For example, the [java.util.ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html)
 class manages a list of objects, allowing append, insert, delete, accessing an element by index,
 and complete traversal.
 
-A program that creates an [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) to store a set of elements will never use a variable of type
-[ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) but instead will use a variable of the type of an interface implemented by this class.
+A program that creates an [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) to store a set of elements will never use a variable of type
+[ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) but instead will use a variable of the type of an interface implemented by this class.
 
 ```java
 // Using the List interface

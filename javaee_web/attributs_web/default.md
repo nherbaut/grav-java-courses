@@ -24,7 +24,7 @@ Portée de l’application (**application scope**)
 #### NOTE
 Un attribut est une notion très vague : il s’agit simplement d’une
 instance d’une classe Java (implémentant si possible l’interface
-[java.io.Serializable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html)).
+[java.io.Serializable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html)).
 
 Le développeur d’application va pouvoir stocker les attributs dont il a
 besoin dans différents objets fournis par le conteneur (suivant la

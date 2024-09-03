@@ -339,7 +339,7 @@ annotations servent à ajouter une information sur une classe, un attribut,
 une méthode, un paramètre ou une variable. Une annotation apporte une information
 au moment de la compilation, du chargement de la classe dans la JVM ou lors
 de l’exécution du code. Le langage Java proprement dit utilise relativement peu les annotations.
-On trouve cependant l’annotation [@Override](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Override.html) qui est très utile pour le polymorphisme.
+On trouve cependant l’annotation [@Override](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Override.html) qui est très utile pour le polymorphisme.
 Cette annotation s’ajoute au début de la signature d’une méthode pour préciser
 que cette méthode est une redéfinition d’une méthode héritée. Cela permet au
 compilateur de vérifier que la signature de la méthode correspond bien à une
@@ -439,8 +439,8 @@ méthode de classe qui a la même signature dans les classes qui en héritent.
 Les constructeurs sont des méthodes particulières qu’il n’est pas possible
 de redéfinir. Les constructeurs créent une séquence d’appel qui garantit
 qu’ils seront exécutés en commençant par la classe la plus haute dans la hiérarchie
-d’héritage. Puisque toutes les classes Java héritent de la classe [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html), cela
-signifie que le constructeur de [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) est toujours appelé en premier.
+d’héritage. Puisque toutes les classes Java héritent de la classe [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html), cela
+signifie que le constructeur de [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) est toujours appelé en premier.
 
 Cependant un constructeur peut appeler une méthode et dans ce cas le polymorphisme
 s’applique. Comme les constructeurs sont appelés dans l’ordre
@@ -502,13 +502,13 @@ VehiculeMotorise vehiculeMotorise = new VehiculeMotorise("DeLorean");
 ```
 
 Le constructeur de *VehiculeMotorise* commence par appeler le constructeur
-de *Vehicule*. Ce dernier appelle implicitement le constructeur de [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) (qui
+de *Vehicule*. Ce dernier appelle implicitement le constructeur de [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) (qui
 ne fait rien) puis il initialise l’attribut *marque* et il appelle la méthode
 *accelerer*. Comme cette dernière est redéfinie, c’est en fait l’implémentation
 fournie par *VehiculeMotorise* qui est appelée. Cette implémentation commence par appeler
 une méthode sur l’attribut *moteur* qui n’a pas encore été initialisé. Donc sa
 valeur est nulle et donc la création d’une instance de *VehiculeMotorise*
-échoue systématiquement avec une erreur du type [NullPointerException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html).
+échoue systématiquement avec une erreur du type [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html).
 
 On voit par cet exemple que l’appel de méthode dans un constructeur peut amener
 à des situations complexes. Il est fortement recommandé d’appeler dans un constructeur

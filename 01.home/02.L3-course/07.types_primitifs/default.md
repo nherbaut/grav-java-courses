@@ -229,14 +229,14 @@ qui permettent d’envelopper la valeur d’un type primitif : on parle de **wra
 
 | Type        | Classe associée                                                                                              |
 |-------------|--------------------------------------------------------------------------------------------------------------|
-| **boolean** | [java.lang.Boolean](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html)     |
-| **char**    | [java.lang.Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) |
-| **int**     | [java.lang.Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html)     |
-| **byte**    | [java.lang.Byte](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Byte.html)           |
-| **short**   | [java.lang.Short](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Short.html)         |
-| **long**    | [java.lang.Long](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html)           |
-| **float**   | [java.lang.Float](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Float.html)         |
-| **double**  | [java.lang.Double](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html)       |
+| **boolean** | [java.lang.Boolean](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)     |
+| **char**    | [java.lang.Character](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html) |
+| **int**     | [java.lang.Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)     |
+| **byte**    | [java.lang.Byte](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Byte.html)           |
+| **short**   | [java.lang.Short](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Short.html)         |
+| **long**    | [java.lang.Long](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html)           |
+| **float**   | [java.lang.Float](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html)         |
+| **double**  | [java.lang.Double](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)       |
 
 #### NOTE
 Le tableau ci-dessus donne le nom complet des classes, c’est-à-dire en incluant
@@ -278,8 +278,8 @@ Une variable de type d’une des classes enveloppes référence un objet donc el
 Ce cas permet de signifier l’absence de valeur.
 
 Les classes enveloppes contiennent des constantes pour donner des informations
-utiles. Par exemple, la classe [java.lang.Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) déclare les constantes
-[MIN_VALUE](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#MIN_VALUE) et [MAX_VALUE](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#MAX_VALUE) qui donnent respectivement la plus petite valeur
+utiles. Par exemple, la classe [java.lang.Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html) déclare les constantes
+[MIN_VALUE](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#MIN_VALUE) et [MAX_VALUE](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#MAX_VALUE) qui donnent respectivement la plus petite valeur
 et la plus grande valeur représentables par la primitive associée.
 
 Enfin les classes enveloppes sont conçues pour être

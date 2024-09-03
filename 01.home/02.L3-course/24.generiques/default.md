@@ -32,7 +32,7 @@ l’instanciation. On parle alors de méthodes et de classes génériques.
 
 En Java, l’API standard fournit un ensemble de classes que l’on appelle couramment
 les [collections](les_collections/). Ces classes permettent de gérer un ensemble d’objets. Elles apportent
-des fonctionnalités plus avancées que les tableaux. Par exemple la classe [java.util.ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html)
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe [java.util.ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html)
 permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
 l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
 et le parcours complet des éléments.
@@ -58,29 +58,29 @@ public class TestArrayList {
 }
 ```
 
-Pour des instances de la classe [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html), on peut ajouter des éléments avec la méthode
-[ArrayList.add](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html#add-E-) et accéder à un élément selon son index avec la méthode [ArrayList.get](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html#get-int-).
+Pour des instances de la classe [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html), on peut ajouter des éléments avec la méthode
+[ArrayList.add](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#add-E-) et accéder à un élément selon son index avec la méthode [ArrayList.get](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#get-int-).
 Dans l’exemple précédent, on voit que cela n’est pas sans risque. En effet, un objet de
-type [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) peut contenir tout type d’objet. Donc quand le programme accède à un élément
-d’une instance de [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html), il doit réaliser explicitement un transtypage (*cast*) avec le risque
+type [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) peut contenir tout type d’objet. Donc quand le programme accède à un élément
+d’une instance de [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html), il doit réaliser explicitement un transtypage (*cast*) avec le risque
 que cela suppose de se tromper de type. Ce type de classe exige donc beaucoup de rigueur
 d’utilisation pour les développeurs.
 
 Une situation plus simple serait de pouvoir déclarer en tant que développeur qu’une instance
-de [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) se limite à un type d’éléments : par exemple au type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html). Ainsi le
+de [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) se limite à un type d’éléments : par exemple au type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html). Ainsi le
 compilateur pourrait signaler une erreur si le programme tente d’ajouter un élément qui n’est
-pas compatible avec le type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) ou s’il veut récupérer un élément dans une variable qui
+pas compatible avec le type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) ou s’il veut récupérer un élément dans une variable qui
 n’est pas d’un type compatible. Les classes et les méthodes génériques permettent
 de gérer ce type de situation. Elles sont une aide pour les développeurs afin
 d’écrire des programmes plus robustes.
 
 ## Création et assignation d’une classe générique
 
-La classe [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) et l’interface [List](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html) sont justement une classe générique
+La classe [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) et l’interface [List](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html) sont justement une classe générique
 et une interface générique supportant un type paramétré.
 
 #### NOTE
-[List](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html) est une interface implémentée notamment par la classe [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html).
+[List](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html) est une interface implémentée notamment par la classe [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html).
 
 Il est possible, par exemple, de déclarer qu’une instance est une liste de
 chaînes de caractères :
@@ -110,19 +110,19 @@ list.add(o); // Erreur de compilation : type String attendu
 Voiture v = (Voiture) list.get(0); // Erreur de compilation Voiture n'hérite pas de String
 ```
 
-Pour les types paramétrés, le principe de substitution s’applique. Comme la classe [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
-hérite de la classe [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html), il est possible de récupérer un élément de la liste
-dans une variable de type [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) :
+Pour les types paramétrés, le principe de substitution s’applique. Comme la classe [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+hérite de la classe [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html), il est possible de récupérer un élément de la liste
+dans une variable de type [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) :
 
 ```java
 Object o = list.get(0); // OK
 ```
 
 Une classe générique peut permettre de déclarer plusieurs types paramétrés. Par exemple,
-la classe [java.util.HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html) permet de créer des tableaux associatifs (parfois
+la classe [java.util.HashMap](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html) permet de créer des tableaux associatifs (parfois
 appelés dictionnaires ou plus simplement *maps*) pour associer une clé à une valeur.
-La classe [HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html) permet de spécifier le type de la clé et le type de la valeur.
-Pour créer un tableau associatif entre le nom d’une personne (type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)) et
+La classe [HashMap](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html) permet de spécifier le type de la clé et le type de la valeur.
+Pour créer un tableau associatif entre le nom d’une personne (type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)) et
 une instance de la classe *Personne*, on peut écrire :
 
 ```java
@@ -130,7 +130,7 @@ Map<String, Personne> tableauAssociatif = new HashMap<String, Personne>();
 ```
 
 #### NOTE
-[Map](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html) est une interface implémentée notamment par la classe [HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html).
+[Map](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html) est une interface implémentée notamment par la classe [HashMap](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html).
 
 ## Notation en diamant
 
@@ -156,8 +156,8 @@ qui en hérite. On appelle cela le principe de substitution.
 Object obj = new String();
 ```
 
-Dans l’exemple ci-dessus, il est possible d’affecter un objet du type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
-à une variable de type [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) car [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) hérite de [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html). Avec les types
+Dans l’exemple ci-dessus, il est possible d’affecter un objet du type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+à une variable de type [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) car [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) hérite de [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html). Avec les types
 génériques, le principe de substitution est possible mais devient un peu
 plus complexe. Par exemple :
 
@@ -165,10 +165,10 @@ plus complexe. Par exemple :
 List<Object> listeString = new ArrayList<String>(); // ERREUR DE COMPILATION
 ```
 
-Il n’est pas possible d’affecter une [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) de [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) à une variable de type
-[ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) de [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html). En effet, si cela était autorisé, il serait alors possible
-d’ajouter avec la méthode [List.add](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#add-E-) n’importe quel objet de type [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) ou
-d’un type héritant de [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html). Donc un développeur pourrait ajouter à cette liste
+Il n’est pas possible d’affecter une [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) de [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) à une variable de type
+[ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) de [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html). En effet, si cela était autorisé, il serait alors possible
+d’ajouter avec la méthode [List.add](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#add-E-) n’importe quel objet de type [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) ou
+d’un type héritant de [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html). Donc un développeur pourrait ajouter à cette liste
 une instance d’une classe *Voiture* par exemple sans que le compilateur puisse
 détecter le problème :
 
@@ -199,7 +199,7 @@ public class VoitureDeCourse extends Voiture {
 }
 ```
 
-Si nous créons une instance de [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) pour le type *Voiture* :
+Si nous créons une instance de [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) pour le type *Voiture* :
 
 ```java
 ArrayList<Voiture> listeVoitures = new ArrayList<>();
@@ -478,11 +478,11 @@ public class Paire<U extends Number, V> {
 ```
 
 En précisant **<U extends Number, V>** dans la déclaration de la classe,
-nous limitons le premier type paramétré au type [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) ou un type qui en hérite.
+nous limitons le premier type paramétré au type [Number](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html) ou un type qui en hérite.
 
 #### NOTE
-La classe [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) est la classe parente des classes enveloppes [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html), [Long](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Long.html),
-[Short](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Short.html), [Byte](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Byte.html), [Float](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Float.html) et [Double](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html).
+La classe [Number](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html) est la classe parente des classes enveloppes [Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html), [Long](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html),
+[Short](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Short.html), [Byte](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Byte.html), [Float](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html) et [Double](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html).
 
 ```java
 Paire<Integer, String> paireIntegerString = new Paire<>(1, "Test");
@@ -495,8 +495,8 @@ Les méthodes et les classes génériques ont des limitations.
 
 Les types paramétrés ne s’appliquent que pour des classes. On ne peut pas spécifier
 un type primitif. Si on désire créer une instance
-de [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) pour des nombres, alors on peut passer par la classe enveloppe
-[Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) :
+de [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) pour des nombres, alors on peut passer par la classe enveloppe
+[Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html) :
 
 ```java
 ArrayList<Integer> listeDeNombres = new ArrayList<Integer>();

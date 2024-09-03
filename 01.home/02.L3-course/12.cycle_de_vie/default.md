@@ -578,7 +578,7 @@ Par exemple, il peut affecter la valeur **null** aux variables et aux attributs
 qui référencent cet objet.
 
 Il est également possible de forcer l’appel au ramasse-miettes gâce à la méthode
-[java.lang.System.gc()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#gc--). Cependant, cette méthode ne donne aucune garantie quant au résultat.
+[java.lang.System.gc()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#gc--). Cependant, cette méthode ne donne aucune garantie quant au résultat.
 Vous ne pouvez pas vous baser sur son appel pour garantir la suppression d’un objet
 non référencé. Le ramasse-miettes utilise un algorithme complexe qui rend son
 comportement difficilement prédictible.
@@ -601,7 +601,7 @@ Java propose un mécanisme de ramasse miettes mais ce dernier ne peut libérer
 l’espace mémoire que des objets non référencés. Si vous développez une application
 qui crée beaucoup d’objets sans donner la possibilité au ramasse-miettes de les collecter,
 votre application peut se retrouver à cours d’espace mémoire. Lors de la création d’un
-nouvel objet, vous obtiendrez alors une erreur du type [java.lang.OutOfMemoryError](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/OutOfMemoryError.html).
+nouvel objet, vous obtiendrez alors une erreur du type [java.lang.OutOfMemoryError](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/OutOfMemoryError.html).
 
 La mémoire n’est pas la seule ressource système avec laquelle les développeurs doivent
 composer. Si Java propose un mécanisme pour la gestion de la mémoire, il ne propose

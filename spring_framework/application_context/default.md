@@ -80,7 +80,7 @@ et depuis le *classpath*.
 
 Un objet de type [GenericXmlApplicationContext](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/GenericXmlApplicationContext.html) doit être fermé lorsqu’il n’est
 plus nécessaire en appelant sa méthode `close`. Notez que cette classe
-implémente également l’interface [AutoCloseable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html), ce qui permet de déclarer
+implémente également l’interface [AutoCloseable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html), ce qui permet de déclarer
 une instance de [GenericXmlApplicationContext](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/GenericXmlApplicationContext.html) avec la syntaxe *try-with-resources*.
 
 ```java
@@ -102,7 +102,7 @@ public class Application {
 Un contexte d’application décrit l’ensemble des objets (les *beans*) à créer
 pour l’application.
 
-Nous pouvons, par exemple, définir un objet de type [Date](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html) de la façon suivante :
+Nous pouvons, par exemple, définir un objet de type [Date](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Date.html) de la façon suivante :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -119,7 +119,7 @@ Nous pouvons, par exemple, définir un objet de type [Date](https://docs.oracle.
 
 On utilise l’élément `<bean />` pour déclarer un objet en donnant son nom avec
 l’attribut `name` (optionnel) et le nom complet de la classe dans l’attribut
-`class`. Le conteneur IoC utilise ces informations pour créer une instance de [Date](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html)
+`class`. Le conteneur IoC utilise ces informations pour créer une instance de [Date](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Date.html)
 en appelant son constructeur sans paramètre.
 
 Nous pouvons ensuite récupérer le *bean* grâce aux méthodes `getBean` fournies
@@ -183,7 +183,7 @@ Le type de la portée peut être indiquée grâce à l’attribut `scope` dans l
 XML de contexte. La portée par défaut dans le Spring Framework est **singleton**.
 
 Pour illustrer le comportement des portées, nous pouvons rependre l’exemple des
-*beans* de type [Date](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html) :
+*beans* de type [Date](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Date.html) :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -201,7 +201,7 @@ Pour illustrer le comportement des portées, nous pouvons rependre l’exemple d
 </beans>
 ```
 
-Le contexte d’application contient deux *beans* de type [Date](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html) : « unique » qui est
+Le contexte d’application contient deux *beans* de type [Date](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Date.html) : « unique » qui est
 un singleton et « now » qui est de portée prototype.
 
 ```java
@@ -256,13 +256,13 @@ en Java :
    Date date = new Date();
    ```
 2. En utilisant une méthode statique. C’est notamment le cas pour
-   créer une instance de la classe [Calendar](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Calendar.html) :
+   créer une instance de la classe [Calendar](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Calendar.html) :
    ```java
    Calendar calendar = Calendar.getInstance();
    ```
 3. En utilisant un autre objet qui sert à fabriquer l’objet final. En Java, on suffixe
    souvent le nom de ces objets par `Factory` pour indiquer qu’ils agissent
-   comme une fabrique. L’API standard de Java fournit par exemple la classe [CertificateFactory](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/CertificateFactory.html)
+   comme une fabrique. L’API standard de Java fournit par exemple la classe [CertificateFactory](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/security/cert/CertificateFactory.html)
    qui permet de créer des objets représentant des certificats pour la cryptographie :
    ```java
    FileInputStream fis = new FileInputStream(filename);
@@ -511,7 +511,7 @@ L’exécution de ce programme affiche le résultat 6 sur la sortie standard.
 
 #### NOTE
 Il existe également l’élément `<map />` pour définir des tableaux associatifs
-([Map](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html)) dans le contexte d’application.
+([Map](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)) dans le contexte d’application.
 
 ```xml
 <map>

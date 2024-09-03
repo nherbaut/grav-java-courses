@@ -373,9 +373,9 @@ parente, le fait de déclarer l’interface marqueur *Cannibale* suffit a modifi
 son comportement.
 
 Le principe de l’interface marqueur est quelques fois utilisé dans l’API standard
-de Java. Par exemple, La méthode [clone](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone--) déclarée par [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html) jette une
-[CloneNotSupportedException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CloneNotSupportedException.html) si elle est appelée sur une instance qui n’implémente
-pas l’interface [Cloneable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html). Cela permet de fournir une méthode par défaut pour créer
+de Java. Par exemple, La méthode [clone](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone--) déclarée par [Object](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html) jette une
+[CloneNotSupportedException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/CloneNotSupportedException.html) si elle est appelée sur une instance qui n’implémente
+pas l’interface [Cloneable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Cloneable.html). Cela permet de fournir une méthode par défaut pour créer
 une copie d’un objet mais sans activer la fonctionnalité. Il faut
 que la classe déclare son intention d’être clonable grâce à l’interface
 marqueur.
@@ -479,13 +479,13 @@ Le premier point implique qu’il est préférable de manipuler les objets à tr
 leurs interfaces plutôt que d’utiliser le type réel de l’objet. Un exemple
 classique en Java concerne l’API des [collections](les_collections/).
 Il s’agit de classes permettant de gérer un ensemble d’objets. Elles apportent
-des fonctionnalités plus avancées que les tableaux. Par exemple la classe [java.util.ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html)
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe [java.util.ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html)
 permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
 l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
 et le parcours complet des éléments.
 
-Un programme qui crée une [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) pour stocker un ensemble d’éléments
-n’utilisera jamais une variable de type [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html) mais plutôt une variable
+Un programme qui crée une [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) pour stocker un ensemble d’éléments
+n’utilisera jamais une variable de type [ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html) mais plutôt une variable
 ayant le type d’une interface implémentée par cette classe.
 
 ```java

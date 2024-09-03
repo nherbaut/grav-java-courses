@@ -4,7 +4,7 @@
 
 * [Quarkus CLI](https://quarkus.io/guides/cli-tooling)
 * [intelliJ Idea](https://www.jetbrains.com/idea/)
-* [Java JDK 17](https://www.oracle.com/java/technologies/java-se-glance.html)
+* [Java JDK 21](https://www.oracle.com/java/technologies/java-se-glance.html)
 
 ## Initialisation du projet
 

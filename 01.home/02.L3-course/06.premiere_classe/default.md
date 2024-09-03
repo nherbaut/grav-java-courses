@@ -257,13 +257,13 @@ d’une variable *voiture* de type *Voiture*, on peut appeler sa méthode *accel
 voiture.accelerer(90);
 ```
 
-Aux lignes 51, 54, 57 et 60, nous utilisons la classe [System](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html) pour afficher du texte sur la sortie
-standard. Notez que nous ne créons pas d’instance de la classe [System](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html) avec l’opérateur **new**.
+Aux lignes 51, 54, 57 et 60, nous utilisons la classe [System](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html) pour afficher du texte sur la sortie
+standard. Notez que nous ne créons pas d’instance de la classe [System](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html) avec l’opérateur **new**.
 Il s’agit d’un cas particulier sur lequel nous reviendrons lorsque nous aborderons les méthodes et
-les attributs de classe. Nous utilisons l’attribut de classe **out** de la classe [System](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html) qui
-représente la sortie standard et nous appelons sa méthode [println](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html#println-java.lang.Object-) qui affiche le texte passé
+les attributs de classe. Nous utilisons l’attribut de classe **out** de la classe [System](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html) qui
+représente la sortie standard et nous appelons sa méthode [println](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html#println-java.lang.Object-) qui affiche le texte passé
 en paramètre suivi d’un saut de ligne. Cependant, nous ne passons pas une chaîne de caractères comme
-paramètre mais directement une instance de notre classe Voiture. Dans ce cas, la méthode [println](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html#println-java.lang.Object-)
+paramètre mais directement une instance de notre classe Voiture. Dans ce cas, la méthode [println](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html#println-java.lang.Object-)
 appellera la méthode *Voiture.toString()* pour obtenir une représentation textuelle de l’objet.
 
 ## Exercice

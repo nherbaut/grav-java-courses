@@ -48,33 +48,33 @@ public class Voiture {
 }
 ```
 
-L’annotation [Override](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Override.html) est définie dans le package [java.lang](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/package-summary.html) (c’est pour cela
+L’annotation [Override](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Override.html) est définie dans le package [java.lang](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/package-summary.html) (c’est pour cela
 qu’il n’est pas nécessaire de l’importer explicitement). Cette annotation est
 utilisable uniquement sur les méthodes pour indiquer que la méthode est une
 redéfinition d’une méthode d’une classe parente (dans l’exemple précédent, la méthode
-redéfinit [Object.toString](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString--)). Cette annotation est exploitée par le compilateur
+redéfinit [Object.toString](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString--)). Cette annotation est exploitée par le compilateur
 pour réaliser des vérifications supplémentaires. C’est également le cas pour les
 autres annotations déclarées dans le même package :
 
-[Deprecated](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html)
+[Deprecated](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Deprecated.html)
 : Permet de générer des warnings afin d’informer les autres développeurs que
   quelque chose (une classe, une méthode…) a été dépréciée et ne devrait plus
   être utilisée.
 
-[FunctionalInterface](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/FunctionalInterface.html)
+[FunctionalInterface](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html)
 : Permet au compilateur de s’assurer que l’interface qui porte cette annotation
   peut être implémentée par une lambda (Cf. [le chapitre sur les lambdas](les_lambdas.md#functionalinterface)).
 
-[Override](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Override.html)
+[Override](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Override.html)
 : Signale qu’une méthode est une redéfinition d’une méthode déclarée dans une classe
   parente. Cela permet au compilateur de signaler une erreur si ce n’est
   pas le cas.
 
-[SuppressWarnings](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/SuppressWarnings.html)
+[SuppressWarnings](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/SuppressWarnings.html)
 : Permet de forcer le compilateur à ne plus émettre d’avertissement à la compilation
   dans certains cas.
 
-[SafeVarargs](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/SafeVarargs.html)
+[SafeVarargs](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/SafeVarargs.html)
 : Cette annotation s’ajoute à une méthode acceptant un paramètre variable
   (*varargs*) dont le type est un générique. En effet, le principe de l’effacement
   de type (*type erasure*) dans la gestion des classes génériques fait qu’il
@@ -154,7 +154,7 @@ public @interface MyAnnotation {
 ```
 
 #### NOTE
-Une annotation implémente implicitement l’interface [Annotation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Annotation.html) et rien d’autre !
+Une annotation implémente implicitement l’interface [Annotation](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Annotation.html) et rien d’autre !
 
 La déclaration des attributs d’une annotation a une syntaxe très particulière :
 
@@ -169,9 +169,9 @@ public @interface MyAnnotation {
 Les attributs d’une annotation peuvent être uniquement :
 
 * un type primitif,
-* une chaîne de caractères ([java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)),
-* une référence de classe ([java.lang.Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html)),
-* une Annotation ([java.lang.annotation.Annotation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Annotation.html)),
+* une chaîne de caractères ([java.lang.String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)),
+* une référence de classe ([java.lang.Class](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html)),
+* une Annotation ([java.lang.annotation.Annotation](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Annotation.html)),
 * une [énumération](enumeration/),
 * un tableau à une dimension d’un de ces types.
 
@@ -180,21 +180,21 @@ aucune valeur n’est donnée pour cet attribut lors de l’utilisation de cette
 
 La déclaration d’une annotation peut elle-même être annotée par :
 
-[Documented](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Documented.html)
+[Documented](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html)
 : Pour indiquer si l’annotation doit apparaître dans la documentation générée
   par un outil comme *javadoc*.
 
-[Inherited](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Inherited.html)
+[Inherited](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Inherited.html)
 : Pour indiquer que l’annotation doit être héritée par la classe fille.
 
-[Retention](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Retention.html)
+[Retention](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html)
 : Pour préciser le niveau de rétention de l’annotation (Cf. ci-dessous).
 
-[Target](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Target.html)
+[Target](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html)
 : Pour indiquer quels types d’éléments peuvent utiliser l’annotation : classe,
   méthode, attribut…
 
-[Repeatable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Repeatable.html)
+[Repeatable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html)
 : Pour indiquer qu’une annotation peut être déclarée plusieurs fois sur un même élément.
 
 ```java
@@ -225,7 +225,7 @@ que sa rétention est de type *RUNTIME*.
 
 Une annotation est définie par sa rétention, c’est-à-dire la façon dont une
 annotation sera conservée. La rétention est définie grâce à la méta-annotation
-[Retention](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Retention.html). Les différentes rétentions d’annotation sont :
+[Retention](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html). Les différentes rétentions d’annotation sont :
 
 **SOURCE**
 : L’annotation est accessible durant la compilation mais n’est pas intégrée dans
@@ -329,7 +329,7 @@ public class TestFramework {
 ```
 
 Grâce à l’API de réflexion, il est possible d’accéder à la représentation objet
-d’une classe avec la méthode [getClass](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass--).
+d’une classe avec la méthode [getClass](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass--).
 
 Finalement, nous pouvons écrire une pseudo-classe de tests :
 

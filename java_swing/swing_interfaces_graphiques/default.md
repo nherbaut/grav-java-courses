@@ -20,7 +20,7 @@ Swing a lui-même remplacé une bibliothèque Java plus ancienne nommé AWT
 graphique du système alors que Swing offre des composants graphiques totalement
 implémentés en Java (et donc avec un comportement et un rendu identiques
 quel que soit le système sous-jacent). AWT est toujours présent dans la bibliothèque
-standard de Java et ses classes se trouvent dans le package [java.awt](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/package-summary.html).
+standard de Java et ses classes se trouvent dans le package [java.awt](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/package-summary.html).
 Swing utilise une partie des classes fournies par AWT.
 
 ## Une première application
@@ -77,7 +77,7 @@ léger (*thread*). Elle traite continuellement les événements que reçoit l’
 exemple, si l’utilisateur appuie sur une touche du clavier ou bouge la souris,
 la boucle des événements en est alertée et crée des objets pour représenter
 ces événements. Pour les exemples données, il s’agira d’instances de
-[KeyEvent](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/KeyEvent.html) et de [MouseEvent](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/event/MouseEvent.html). Tant que la boucle des événements s’exécute, l’application
+[KeyEvent](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/KeyEvent.html) et de [MouseEvent](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/event/MouseEvent.html). Tant que la boucle des événements s’exécute, l’application
 ne peut pas s’arrêter (même si toutes les fenêtres de l’application ont été fermées).
 C’est pour cela qu’à la ligne 14, on précise que si la fenêtre est fermée, alors
 il faudra déclencher un événement de sortie (*EXIT_ON_CLOSE*) qui mettra fin à
@@ -86,14 +86,14 @@ boucle des événements et arrêtera l’application.
 ## Les principaux composants
 
 Les composants graphiques Swing sont conçus comme des conteneurs. D’ailleurs,
-ils héritent indirectement de la classe AWT [Container](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Container.html). Cela signifie qu’une
+ils héritent indirectement de la classe AWT [Container](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Container.html). Cela signifie qu’une
 instance de [JFrame](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html) (une fenêtre) contient des composants graphiques qui eux-mêmes
 peuvent contenir des composants graphiques, etc, etc. Donc on peut imaginer
 une interface graphique sous la forme d’un arbre dont la racine est constituée
 par une instance de [JFrame](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html). Pour ajouter un composant graphique dans un autre
-composant graphique, on peut utiliser une des méthodes [add](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Container.html#add-java.awt.Component-) héritées de [Container](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Container.html).
-On peut également supprimer un composant d’un autre avec la méthode [Container.remove](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Container.html#remove-java.awt.Component-)
-ou [Container.removeAll](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Container.html#removeAll--).
+composant graphique, on peut utiliser une des méthodes [add](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Container.html#add-java.awt.Component-) héritées de [Container](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Container.html).
+On peut également supprimer un composant d’un autre avec la méthode [Container.remove](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Container.html#remove-java.awt.Component-)
+ou [Container.removeAll](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Container.html#removeAll--).
 
 Parmi les composants graphiques les plus couramment utilisés en Swing, on trouve :
 
@@ -228,7 +228,7 @@ ne sont pas directement ajoutés au *tabbedPane* mais à une instance de [JPanel
 qui est ajoutée au *tabbedPane*.
 
 #### NOTE
-À la ligne 57, on appelle la méthode [Window.setLocationRelativeTo](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Window.html#setLocationRelativeTo-java.awt.Component-) qui permet
+À la ligne 57, on appelle la méthode [Window.setLocationRelativeTo](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Window.html#setLocationRelativeTo-java.awt.Component-) qui permet
 de positionner une fenêtre à la même position qu’un autre composant graphique.
 En passant **null** comme paramètre, cela positionne la fenêtre au centre
 de l’écran.
@@ -247,12 +247,12 @@ dans son organisation. Un type d’agencement est appelé un *layout* et il exis
 en Swing des objets qui représentent des types de *layout* particulier.
 
 Chaque composant Swing a une taille préférée (une hauteur et une largeur en
-pixels) qui est donnée par la méthode [Container.getPreferredSize](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Container.html#getPreferredSize--). Par exemple, une
+pixels) qui est donnée par la méthode [Container.getPreferredSize](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Container.html#getPreferredSize--). Par exemple, une
 instance de [JButton](https://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html) va donner une taille qui lui permet d’afficher correctement
 son libellé ainsi que le dessin qui représente le cadre du bouton lui-même. Un
 *layout* doit tenir compte de la taille préférée de tous les composants dont
-il a la charge. Swing fournit huit *layouts* différents : [BorderLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/BorderLayout.html),
-[BoxLayout](https://docs.oracle.com/javase/8/docs/api/javax/swing/BoxLayout.html), [CardLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/CardLayout.html), [FlowLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/FlowLayout.html), [GridBagLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridBagLayout.html), [GroupLayout](https://docs.oracle.com/javase/8/docs/api/javax/swing/GroupLayout.html), [GridLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridLayout.html),
+il a la charge. Swing fournit huit *layouts* différents : [BorderLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/BorderLayout.html),
+[BoxLayout](https://docs.oracle.com/javase/8/docs/api/javax/swing/BoxLayout.html), [CardLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/CardLayout.html), [FlowLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/FlowLayout.html), [GridBagLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridBagLayout.html), [GroupLayout](https://docs.oracle.com/javase/8/docs/api/javax/swing/GroupLayout.html), [GridLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridLayout.html),
 [SpringLayout](https://docs.oracle.com/javase/8/docs/api/javax/swing/SpringLayout.html).
 
 #### NOTE
@@ -359,12 +359,12 @@ un écart minimal en pixels entre deux composants.
 
 La méthode *addButtons* déclarée à la ligne 52 permet de créer une ligne contenant
 les boutons en bas du formulaire. Là encore, la ligne est représentée par un
-[JPanel](https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html). Mais son *layout* est ici géré par une instance de [FlowLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/FlowLayout.html). Un
-[FlowLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/FlowLayout.html) organise les composants les uns à la suite des autres en permettant
+[JPanel](https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html). Mais son *layout* est ici géré par une instance de [FlowLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/FlowLayout.html). Un
+[FlowLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/FlowLayout.html) organise les composants les uns à la suite des autres en permettant
 de spécifier un alignement. Pour notre application on demande que les boutons
-soient alignés à droite ([FlowLayout.Right](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/FlowLayout.html#RIGHT)).
+soient alignés à droite ([FlowLayout.Right](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/FlowLayout.html#RIGHT)).
 
-À la ligne 32, on appelle la méthode [pack](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Window.html#pack--). Comme son nom l’indique, cette méthode
+À la ligne 32, on appelle la méthode [pack](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Window.html#pack--). Comme son nom l’indique, cette méthode
 compacte les dimensions du composant graphique afin que sa taille soit minimale. Appliquée
 à notre classe qui représente la fenêtre de l’application, cette méthode force
 les gestionnaires de *layout* à organiser visuellement les composants graphiques
@@ -375,9 +375,9 @@ fenêtre de l’application ne peut pas être redimensionnée.
 
 ### Le GridBagLayout
 
-Le [GridBagLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridBagLayout.html) permet de gérer le *layout* comme une grille fictive. Chaque composant
+Le [GridBagLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridBagLayout.html) permet de gérer le *layout* comme une grille fictive. Chaque composant
 a des contraintes de positionnement. Ces contraintes sont
-représentées par les attributs d’une instance de [GridBagConstraints](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridBagConstraints.html) :
+représentées par les attributs d’une instance de [GridBagConstraints](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridBagConstraints.html) :
 
 gridx, gridy
 : Ces attributs indiquent la position dans la grille (colonne et ligne).
@@ -490,13 +490,13 @@ Le programme ci-dessus produit une fenêtre de formulaire :
 
 ![image](java_swing/images/swing/exemple_gridbaglayout.png)
 
-À la ligne 24, on spécifie le [GridBagLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridBagLayout.html) comme *layout* pour le *content pane*.
+À la ligne 24, on spécifie le [GridBagLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridBagLayout.html) comme *layout* pour le *content pane*.
 Aux lignes 38 et 69, chaque méthode de création des composants crée une instance
 de GridBagConstraints de manière à spécifier les contraintes de placement qui
 sont ensuite passées en paramètres au moment de l’ajout des composants aux lignes
 60 et 80.
 
-Le [GridBagLayout](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/GridBagLayout.html) est particulièrement utile pour des fenêtres de type formulaire
+Le [GridBagLayout](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/GridBagLayout.html) est particulièrement utile pour des fenêtres de type formulaire
 qui sont le plus souvent organisées par rapport à une grille. Il évite d’avoir à créer
 des objets de type [JPanel](https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html) pour grouper les composants entre eux.
 

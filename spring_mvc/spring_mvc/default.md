@@ -499,7 +499,7 @@ par défaut) alors l’absence de valeur entraîne une erreur de type 400 (bad r
 et la méthode du contrôleur n’est pas appelée.
 
 #### NOTE
-Depuis Java 8, il est possible d’utiliser [Optional](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html) comme type de paramètre
+Depuis Java 8, il est possible d’utiliser [Optional](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html) comme type de paramètre
 afin de préciser que le paramètre est optionnel (sans avoir à se préoccuper de la
 valeur de l’attribut *required*).
 
@@ -1144,8 +1144,8 @@ package {{ROOT_PKG}};
 
 Dans l’exemple ci-dessus, le contrôleur contient une méthode annotée avec
 [@InitBinder](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/InitBinder.html). Cette méthode est appelée avant l’appel de la méthode de traitement
-de la requête. Elle enregistre un [SimpleDateFormat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html) pour permettre de convertir
-une chaîne de caractères en [Date](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html) à partir d’un format particulier.
+de la requête. Elle enregistre un [SimpleDateFormat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/SimpleDateFormat.html) pour permettre de convertir
+une chaîne de caractères en [Date](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Date.html) à partir d’un format particulier.
 
 ## Utiliser le contexte de l’application
 

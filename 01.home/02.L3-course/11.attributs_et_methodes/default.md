@@ -182,12 +182,12 @@ Il est donc possible d’accéder directement à cet attribut depuis la classe :
 System.out.println(Voiture.nombreDeRoues);
 ```
 
-Notez que dans l’exemple précédent, [out](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out) est également un attribut de la classe [System](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html). Si
-vous vous rendez sur la documentation de cette classe, vous constaterez que [out](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out) est déclaré
+Notez que dans l’exemple précédent, [out](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#out) est également un attribut de la classe [System](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html). Si
+vous vous rendez sur la documentation de cette classe, vous constaterez que [out](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#out) est déclaré
 comme **static** dans cette classe. Il s’agit d’une autre utilisation des attributs de classe :
 lorsqu’il n’existe qu’une seule instance d’un objet pour toute une application, cette instance
 est généralement accessible grâce à un attribut **static**. C’est une des façons
-d’implémenter le design pattern [singleton](https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)) en Java. Dans notre exemple, [out](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out) est l’objet
+d’implémenter le design pattern [singleton](https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)) en Java. Dans notre exemple, [out](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#out) est l’objet
 qui représente la sortie standard de notre application. Cet objet est unique pour toute l’application
 et nous n’avons pas à le créer car il existe dès le lancement.
 
@@ -506,7 +506,7 @@ int resultat = Calculatrice.additionner(1, 2, 3, 4);
 Certaines classes de l’API Java ne contiennent que des méthodes de classe.
 On parle de classes utilitaires ou de classes outils puisqu’elles s’apparentent à
 une collection de fonctions. Parmi les plus utilisées, on trouve les classes
-[java.lang.Math](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html), [java.lang.System](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html), [java.util.Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) et [java.util.Collections](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html).
+[java.lang.Math](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html), [java.lang.System](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html), [java.util.Arrays](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html) et [java.util.Collections](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collections.html).
 
 Il est tout à fait possible d’invoquer une méthode de classe à travers une variable
 pointant sur une instance de cette classe :

@@ -141,8 +141,8 @@ l = ++k; // l vaudra 11 et k vaudra 11
 ## L’opérateur de concaténation de chaînes
 
 Les chaînes de caractères peuvent être concaténées avec l’opérateur **+**.
-En Java, les chaînes de caractères sont des objets de type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html). Il est
-possible de concaténer un objet de type [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) avec un autre type.
+En Java, les chaînes de caractères sont des objets de type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html). Il est
+possible de concaténer un objet de type [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) avec un autre type.
 Pour cela, le compilateur insérera un appel à la méthode *toString* de l’objet ou de
 la classe enveloppe pour un type primitif.
 
@@ -150,7 +150,7 @@ la classe enveloppe pour un type primitif.
 
 #### NOTE
 L’opérateur de concaténation correspond plus à du sucre syntaxique qu’à un
-véritable opérateur. En effet, il existe la classe [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) dont la tâche
+véritable opérateur. En effet, il existe la classe [StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html) dont la tâche
 consiste justement à nous aider à construire des chaînes de caractères. Le compilateur
 remplacera en fait notre code précédent par quelque chose dans ce genre :
 
@@ -270,7 +270,7 @@ L’opération doit avoir un sens. Par exemple, pour passer d’un type d’obje
 que les classes aient un lien d’héritage entre elles.
 
 #### NOTE
-Le transtypage peut se faire également par un appel à la méthode [Class.cast](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html#cast-java.lang.Object-).
+Le transtypage peut se faire également par un appel à la méthode [Class.cast](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html#cast-java.lang.Object-).
 Il s’agit d’une utilisation avancée du langage puisqu’elle fait intervenir la notion
 de réflexivité.
 
@@ -309,7 +309,7 @@ System.out.println("La chaîne de caractères contient " + length  + " caractèr
 #### NOTE
 On a l’habitude d’utiliser l’opérateur **.** en plaçant à gauche une variable ou
 un appel de fonction. Cependant comme une chaîne de caractères est une instance
-de [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html), on peut aussi écrire :
+de [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html), on peut aussi écrire :
 
 ```java
 int length = "Hello the world".length();

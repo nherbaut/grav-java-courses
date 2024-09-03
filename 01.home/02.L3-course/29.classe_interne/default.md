@@ -132,7 +132,7 @@ System.out.println(Arrays.toString(individus));
 ```
 
 Dans l’exemple ci-dessus, la classe *Individu* fournit publiquement une
-implémentation d’un [Comparator](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html) qui permet de comparer deux instances en
+implémentation d’un [Comparator](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Comparator.html) qui permet de comparer deux instances en
 fonction de leur nom et de leur prénom. Notez que l’implémentation de la
 méthode *compare* peut accéder aux attributs privés *nom* et *prenom* des
 paramètres *i1* et *i2* car ils sont de type *Individu*.
@@ -290,7 +290,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
         System.out.println(String.format("%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s",
                                          LocalDateTime.now(), application, message));
       }
@@ -353,7 +353,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
         System.out.println(String.format("%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s",
                                          LocalDateTime.now(), application, message));
       }
@@ -373,7 +373,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
         String logMessage = String.format("%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s",
                                           LocalDateTime.now(), application, message);
         try(Writer w = Files.newBufferedWriter(path, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
@@ -412,7 +412,7 @@ public Logger creerFileLogger(final Path path) {
     @Override
     public void log(String message) {
       // Pour le format du message utilisé dans printf
-      // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+      // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
       String logMessage = String.format("%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s",
                                         LocalDateTime.now(), application, message);
       try(Writer w = Files.newBufferedWriter(path, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
@@ -460,7 +460,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
 
         System.out.println(genererLogMessage(message));
       }
@@ -544,7 +544,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
         System.out.println(GenerateurLogger.this.log(message));
       }
     };
@@ -555,7 +555,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
         try(Writer w = Files.newBufferedWriter(path, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
           w.append(GenerateurLogger.this.log(message)).append('\n');
         } catch (IOException e) {
@@ -621,7 +621,7 @@ public class GenerateurLogger {
       @Override
       public void log(String message) {
         // Pour le format du message utilisé dans printf
-        // Cf. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax
+        // Cf. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax
         System.out.println(GenerateurLogger.this.log(message));
       }
     }

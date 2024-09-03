@@ -18,13 +18,13 @@ Habituellement, le nouveau composant graphique redéfinit (*override*) les méth
   pour positionner les différents composants dont ils ont la charge.
 
 [paintComponent(Graphics g)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComponent.html#paintComponent-java.awt.Graphics-)
-: Cette méthode permet de peindre le contenu d’un composant. L’objet de type [Graphics](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Graphics.html)
+: Cette méthode permet de peindre le contenu d’un composant. L’objet de type [Graphics](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Graphics.html)
   reçu en paramètre est utilisé pour dessiner des lignes, des formes géométriques
   ou des lettres. Pour forcer un composant à se redessiner, on appelle une de
-  ses méthodes [repaint](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Component.html#repaint--).
+  ses méthodes [repaint](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Component.html#repaint--).
 
 #### NOTE
-Lorsqu’on utilise les primitives de dessin de la classe [Graphics](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/awt/Graphics.html), il faut
+Lorsqu’on utilise les primitives de dessin de la classe [Graphics](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/awt/Graphics.html), il faut
 passer des coordonnées x,y. x représente la position horizontale en pixels et
 y la position verticale en pixels. Le point (0,0) est toujours en haut à gauche
 de la zone du composant.
