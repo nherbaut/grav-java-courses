@@ -1,24 +1,23 @@
 ---
-title: 'Une première classe'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: "Une premi\xE8re classe"
 ---
-
 # Une première classe
 
 Java est langage orienté objet. Cela signifie que (presque) tout est un objet.
@@ -227,7 +226,7 @@ le nom d’une classe qui doit déclarer une méthode **main**.
 
 Ajoutons une méthode **main** à la classe Voiture pour réaliser une programme très simple :
 
-<iframe src="https://javarunner.miage.dev?gistId=2a5c56825b9de468ea863bec320542fb" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=e26f11ea-67b2-4815-97e8-186b23451017" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 À la ligne 49, le code commence par créer une **instance** de la classe Voiture.
 Une classe représente une abstraction ou, si vous préférez, un schéma de ce

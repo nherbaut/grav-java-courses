@@ -1,24 +1,23 @@
 ---
-title: 'Abstract Interfaces'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: Abstract Interfaces
 ---
-
 # Abstract Interfaces
 
 An interface defines a set of services that a client can obtain from an object. An interface introduces a pure abstraction that allows for maximum decoupling between a service and its implementation. We often find interfaces at the heart of many libraries and frameworks. The mechanism of interfaces also introduces a simplified form of multiple inheritance.

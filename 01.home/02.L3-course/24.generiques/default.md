@@ -1,24 +1,23 @@
 ---
-title: 'Méthodes et classes génériques'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: "M\xE9thodes et classes g\xE9n\xE9riques"
 ---
-
 # Méthodes et classes génériques
 
 Parfois, on souhaite créer une classe mais on ne souhaite pas préciser le type

@@ -1,23 +1,22 @@
 ---
-sitemap:
-    lastmod: '22-08-2024 12:19'
-media:
-    featured_image:
-        toggle: true
-        file: {  }
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-title: 'Attributs & méthodes'
-show_sidebar: false
 feed:
-    limit: 10
+  limit: 10
+media:
+  featured_image:
+    file: {}
+    toggle: true
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 12:19
+title: "Attributs & m\xE9thodes"
 ---
-
 Dans ce chapitre, nous allons revenir sur la déclaration d’une classe en Java
 et détailler les notions d’attributs et de méthodes.
 
@@ -877,4 +876,4 @@ il ne faut pas déclarer de *setter* pour cette propriété.
 
 ## Exercice
 
-<iframe src="https://javarunner.miage.dev/?gistId=2cceecf6ab87a0848a787c48f06839e6" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=eb29c0cb-4ce0-41fa-a3b5-06754b593516" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>

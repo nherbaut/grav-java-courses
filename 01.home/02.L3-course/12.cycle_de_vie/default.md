@@ -1,24 +1,23 @@
 ---
-title: 'Cycle de vie d’un objet'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: "Cycle de vie d\u2019un objet"
 ---
-
 # Cycle de vie d’un objet
 
 Ce chapitre détaille la création d’un objet et son cycle de vie. Nous aborderons

@@ -1,3 +1,6 @@
+---
+{}
+---
 Le langage Java
 
 * [Le logiciel mange le monde](/langage_java/l_art_de_la_programmation/)

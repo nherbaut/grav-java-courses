@@ -1,24 +1,23 @@
 ---
-title: 'Les classes internes'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: Les classes internes
 ---
-
 # Les classes internes
 
 La plupart du temps, une classe en Java est déclarée dans un fichier
