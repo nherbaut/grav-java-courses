@@ -1,24 +1,23 @@
 ---
-title: 'Les types primitifs'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: Les types primitifs
 ---
-
 # Les types primitifs
 
 Java n’est pas complètement un langage orienté objet dans la mesure où il supporte
@@ -218,7 +217,7 @@ float f = 0.5f;
 
 ## Exercice d’application
 
-<iframe src="https://java.miage.dev/?gistId=aef05107b5851ebd578bbe5bcd42ccdd" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=2ebd977f-a340-4c2f-a064-1de0df4e8a7f" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 ## Les classes enveloppes
 
@@ -364,4 +363,4 @@ n’est pas possible et aboutira à une erreur (NullPointerException). Si cet ex
 est trivial, il peut être beaucoup plus subtil et difficile à comprendre pour un projet
 de plusieurs centaines (milliers) de lignes de code.
 
-<iframe src="https://java.miage.dev/?gistId=227948c9191a8d7741690c70d0b41446" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=2ebd977f-a340-4c2f-a064-1de0df4e8a7f" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>

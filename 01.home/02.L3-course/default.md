@@ -1,21 +1,20 @@
 ---
-title: 'L3 MIAGE INF2'
-show_sidebar: true
+content:
+  items: '@self.children'
+  order:
+    by: default
+    dir: asc
+process:
+  markdown: true
+  twig: true
 show_breadcrumbs: true
 show_pagination: true
-content:
-    items: '@self.children'
-    order:
-        by: default
-        dir: asc
+show_sidebar: true
 sitemap:
-    lastmod: '22-08-2024 16:34'
+  lastmod: 22-08-2024 16:34
+title: L3 MIAGE INF2
 twig_first: true
-process:
-    markdown: true
-    twig: true
 ---
-
 # Objectif de l’enseignement
 Assurer l’autonomie des étudiants dans la pratique de la programmation orientée objet (POO) à l’aide du langage Java. Les étudiants seront capable de mettre en œuvres les principes d’une conception basée sur les objets et analyser un besoin pour le traduire en classes.
 

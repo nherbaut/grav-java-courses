@@ -1,24 +1,23 @@
 ---
-title: 'La structure fondamentale du langage'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: La structure fondamentale du langage
 ---
-
 # La structure fondamentale du langage
 
 La syntaxe du langage Java est à l’origine très inspirée du C et du C++.
@@ -198,4 +197,4 @@ true   false   null
 
 Faites en sorte que ce code compile  et écrivez des commentaires pour les boucles.
 
-<iframe src="https://javarunner.miage.dev?gistId=79ac0003c07cf4dea6e99cbfcd21bac9" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=a009d743-4fa4-45aa-a36d-d2353e0e1c86" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>

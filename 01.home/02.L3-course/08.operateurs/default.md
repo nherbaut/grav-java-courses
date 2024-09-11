@@ -1,24 +1,23 @@
 ---
-title: 'Les opérateurs'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: "Les op\xE9rateurs"
 ---
-
 # Les opérateurs
 
 Un opérateur prend un ou plusieurs opérandes et produit une nouvelle valeur.
@@ -32,7 +31,7 @@ la valeur du paramètre de droite (appelé *rvalue*) dans le paramètre de gauch
 (appelé *lvalue*). Java opère donc par copie. Cela signifie que si l’on change
 plus tard la valeur d’un des opérandes, la valeur de l’autre ne sera pas affectée.
 
-<iframe src="https://javarunner.miage.dev/?gistId=d3ee0c8cd531c1b6a1536a5c5c204f21" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Pour les variables de type objet, on appelle ces variables des **handlers**
 car la variable ne contient pas à proprement parler un objet mais
@@ -122,7 +121,7 @@ Les opérateurs arithmétiques unaires ne prennent qu’un seul argument
 | `--expr`   | Décrément préfixé    |
 | **+**      | Positif              |
 | **-**      | Négatif              |
-<iframe src="https://javarunner.miage.dev/?gistId=8c2ec5fecf503c5c1e8176da81bd9df9" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 #### NOTE
 Il y a une différence entre un opérateur postfixé et un opérateur préfixé lorsqu’ils
@@ -146,7 +145,7 @@ possible de concaténer un objet de type [String](https://docs.oracle.com/en/jav
 Pour cela, le compilateur insérera un appel à la méthode *toString* de l’objet ou de
 la classe enveloppe pour un type primitif.
 
-<iframe src="https://javarunner.miage.dev/?gistId=782e73dbc3aa99d2256c36a7c7b7dc97" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 #### NOTE
 L’opérateur de concaténation correspond plus à du sucre syntaxique qu’à un
@@ -154,7 +153,7 @@ véritable opérateur. En effet, il existe la classe [StringBuilder](https://doc
 consiste justement à nous aider à construire des chaînes de caractères. Le compilateur
 remplacera en fait notre code précédent par quelque chose dans ce genre :
 
-<iframe src="https://javarunner.miage.dev/?gistId=69218725a3f7a9276ccc63ed8f35453a" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 #### NOTE
 Concaténer une chaîne de caractères avec une variable nulle ajoute la chaîne
@@ -227,7 +226,7 @@ retourne **false** alors le résultat de l’expression sera **false** et la mé
 
 <!-- .. code-block:: java
 
-ltest() || rtest() --><iframe src="https://javarunner.miage.dev/?gistId=e8165fed5cf9a83d2827fcecd3e2e5bb" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><iframe src="https://javarunner.miage.dev/?gistId=f3e59ecec850c6ade0ad95a787a3cbe9" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+ltest() || rtest() --><iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Dans l’exemple ci-dessus, la méthode **ltest** est appelée et si elle retourne **false**
 alors la méthode rtest() sera appelée pour évaluer l’expression. Si la méthode **ltest**
@@ -264,7 +263,7 @@ le type attendu entre parenthèses :
 
 int i = 1;
 long l = i; // Ok
-short s = (short) l; // cast obligatoire --><iframe src="https://javarunner.miage.dev/?gistId=e71ce0c51a0314016098605887b289f3" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+short s = (short) l; // cast obligatoire --><iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 L’opération doit avoir un sens. Par exemple, pour passer d’un type d’objet à un autre, il faut
 que les classes aient un lien d’héritage entre elles.
@@ -381,4 +380,4 @@ i = i << 3 // i vaut 16
 i = i >> 2 // i vaut 4
 ```
 
-<iframe src="https://javarunner.miage.dev/?gistId=d9ad471aa7eb2936107e7471331a1c04" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>

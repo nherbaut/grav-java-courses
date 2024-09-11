@@ -1,24 +1,23 @@
 ---
-title: 'Les structures de contrôle'
-sitemap:
-    lastmod: '22-08-2024 13:32'
-partials:
-    header_subtitle:
-        toggle: true
-    metadata:
-        where: header
-    breadcrumbs:
-        toggle: false
-feed:
-    limit: 10
-show_sidebar: false
-process:
-    markdown: true
-    twig: false
 content:
-    items: '@self.listing'
+  items: '@self.listing'
+feed:
+  limit: 10
+partials:
+  breadcrumbs:
+    toggle: false
+  header_subtitle:
+    toggle: true
+  metadata:
+    where: header
+process:
+  markdown: true
+  twig: false
+show_sidebar: false
+sitemap:
+  lastmod: 22-08-2024 13:32
+title: "Les structures de contr\xF4le"
 ---
-
 # Les structures de contrôle
 
 Comme la plupart des langages impératifs, Java propose un ensemble de structures de contrôle.
@@ -325,4 +324,4 @@ switch (c) {
 
 ## Exercice
 
-<iframe src="https://javarunner.miage.dev/?gistId=6c81ee4180814913ec098e21f6bcacd0" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev?snipId=b175f144-0771-4c4c-b87f-ec8bfc9945ae" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
