@@ -1,5 +1,5 @@
 ---
-title: Premières classes
+title: 'Premières classes'
 ---
 
 # Caractéristiques du langage Java
@@ -70,4 +70,4 @@ Je vois également qu'un enseignant et qu'un étudiant ont des caractéristiques
 
 On voit donc qu'il exsite un concept *plus abstrait* dans notre modèle `Usager de l'université` qui regroupes les caractéristiques communes des deux classes.
 
-<iframe src="https://java.miage.dev?gistId=bc7f9ba62a13d1eb9df8a223f8f85bac" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=573572bc-5025-41b5-ad6e-679be4315391" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>

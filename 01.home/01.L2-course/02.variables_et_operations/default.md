@@ -36,7 +36,7 @@ Les variables peuvent être de différent types:
   * *double*: un gros numbre à virgule dans \[-1.8E308;1.8E308\]
 * les types *Objets*: sont sont tous les autres
 
-<iframe src="https://java.miage.dev?gistId=4473c2d4e06dd1569c16785f413d0fb6" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=573572bc-5025-41b5-ad6e-679be4315391" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
 ## Utilisation des variables de type primitif
@@ -62,7 +62,7 @@ Les fonctions prennent entre 0 et n arguments et retournent 0 ou 1 valeur. La si
 
 pour appeller une fonction, il suffit de taper `nom_fonction(value1, value2)`
 
-<iframe src="https://java.miage.dev?gistId=854826874a588fb41e3bcbc6feafc03f" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=72c5b606-949c-4e7a-9935-3448dba1f19e" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 ## Les conditions
 
@@ -90,19 +90,19 @@ else{
 
 #### Exo1 
 
-<iframe src="https://java.miage.dev?gistId=22298637dbd97048ee2c5cde9b1f3e1a" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=36ad186c-582c-4b67-8c2c-d4c9db545dbb" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 #### Exo 2
 
-<iframe src="https://java.miage.dev?gistId=06a437d879687d4d585979fcc94ec4da" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=9c35f598-e635-4c12-bb7c-ee3cc5d3f7c4" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 #### Exo 3
 
-<iframe src="https://java.miage.dev?gistId=b3d38a5c65a06307a2d51aa2699666fd" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=c56f6100-8c97-4b6f-9afc-3ca79bc248dc" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 #### Exo 4
 
-<iframe src="https://java.miage.dev?gistId=4e3fa165063d5c2db6cb38ca272fa82d" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://java.miage.dev/?snipId=3171fdb3-d24e-43b4-a3d9-ceaa90076971" width="100%" height="800" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
 ## Combiner des expressions dans des conditions
