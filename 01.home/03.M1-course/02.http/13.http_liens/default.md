@@ -1,5 +1,6 @@
 ---
-published: false
+published: true
+title: Sémantique des liens HTTP
 sitemap:
     lastmod: '21-08-2024 23:15'
 media:

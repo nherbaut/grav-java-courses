@@ -1,21 +1,23 @@
 ---
 feed:
-  limit: 10
+    limit: 10
 partials:
-  breadcrumbs:
-    toggle: false
-  header_subtitle:
-    toggle: true
-  metadata:
-    where: header
+    breadcrumbs:
+        toggle: false
+    header_subtitle:
+        toggle: true
+    metadata:
+        where: header
 process:
-  markdown: true
-  twig: false
+    markdown: true
+    twig: false
 show_sidebar: false
 sitemap:
-  lastmod: 22-08-2024 13:32
-title: Le logiciel mange le monde
+    lastmod: '22-08-2024 13:32'
+title: 'Le logiciel mange le monde'
+media_order: tiobe.png
 ---
+
 # Le logiciel mange le monde
 
 Aujourd’hui, le logiciel est présent dans toutes les sphères de nos
@@ -63,8 +65,9 @@ qui exécute les opérations que vous avez décidé**
 # La programmation Orientée Objet et le JAVA
 
 ## Pourquoi le JAVA
+![tiobe](tiobe.png "tiobe")
 
-![TIOBE Index (https://www.tiobe.com/tiobe-index/)](langage_java/images/tiobe.png)
+https://www.tiobe.com/tiobe-index
 
 Java est le langage le plus utilisé dans l’informatique de gestion, mais
 peut être utilisé dans de nombreux autres cas. Dans son écosystème, on
@@ -86,7 +89,7 @@ enseigne, chaque étudiant apprend).
 
 Les classes d’individus peuvent être réparties en famille, dès lors
 qu’une classe peut en spécialiser une autre. Par exemple, les prof et
-les [étudiants.es](http://xn--tudiants-90a.es) sont des humains et *héritent* donc de certaines
+les étudiants.es sont des humains et *héritent* donc de certaines
 propriété des individus de la classe des humains. Si on dit que tous les
 être humains possèdent un nom et que les prof sont des être humains,
 alors un prof possède un nom.

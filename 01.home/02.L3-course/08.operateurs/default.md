@@ -1,23 +1,24 @@
 ---
 content:
-  items: '@self.listing'
+    items: '@self.listing'
 feed:
-  limit: 10
+    limit: 10
 partials:
-  breadcrumbs:
-    toggle: false
-  header_subtitle:
-    toggle: true
-  metadata:
-    where: header
+    breadcrumbs:
+        toggle: false
+    header_subtitle:
+        toggle: true
+    metadata:
+        where: header
 process:
-  markdown: true
-  twig: false
+    markdown: true
+    twig: false
 show_sidebar: false
 sitemap:
-  lastmod: 22-08-2024 13:32
-title: "Les op\xE9rateurs"
+    lastmod: '22-08-2024 13:32'
+title: 'Les opérateurs'
 ---
+
 # Les opérateurs
 
 Un opérateur prend un ou plusieurs opérandes et produit une nouvelle valeur.
@@ -224,7 +225,7 @@ Dans l’exemple ci-dessus, la méthode **ltest** est appelée et si elle retour
 alors la méthode rtest() sera appelée pour évaluer l’expression. Si la méthode **ltest**
 retourne **false** alors le résultat de l’expression sera **false** et la méthode **rtest** ne sera pas appelée.
 
-<!-- .. code-block:: java
+
 
 ltest() || rtest() --><iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
@@ -259,11 +260,13 @@ uniquement les opérations de transtypage qui sont sûres. Par exemple : passer 
 Si on le désire, il est possible de forcer un transtypage en indiquant explicitement
 le type attendu entre parenthèses :
 
-<!-- .. code-block:: java
-
+```java
 int i = 1;
 long l = i; // Ok
-short s = (short) l; // cast obligatoire --><iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+short s = (short) l; // cast obligatoire 
+```
+
+<iframe src="https://java.miage.dev?snipId=5bdcca82-5a13-411d-9ba7-9c1117422ef7" width="100%" height="580" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 L’opération doit avoir un sens. Par exemple, pour passer d’un type d’objet à un autre, il faut
 que les classes aient un lien d’héritage entre elles.

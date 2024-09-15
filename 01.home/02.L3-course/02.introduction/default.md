@@ -1,21 +1,22 @@
 ---
 feed:
-  limit: 10
+    limit: 10
 partials:
-  breadcrumbs:
-    toggle: false
-  header_subtitle:
-    toggle: true
-  metadata:
-    where: header
+    breadcrumbs:
+        toggle: false
+    header_subtitle:
+        toggle: true
+    metadata:
+        where: header
 process:
-  markdown: true
-  twig: false
+    markdown: true
+    twig: false
 show_sidebar: false
 sitemap:
-  lastmod: 22-08-2024 13:32
+    lastmod: '22-08-2024 13:32'
 title: Introduction
 ---
+
 # Introduction
 
 Java est un langage de programmation originellement proposé par Sun
@@ -74,124 +75,31 @@ exotiques.…)
 
 ## Un bref historique des versions
 
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>version</th>
-<th>date</th>
-<th>faits notables</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.0</td>
-<td>janvier 1996</td>
-<td>La naissance</td>
-</tr>
-<tr>
-<td>1.1</td>
-<td>février 1997</td>
-<td>Ajout de JDBC et définition des JavaBeans</td>
-</tr>
-<tr>
-<td>1.2</td>
-<td>décembre 1998</td>
-<td>Ajout de Swing, des collections (JCF), La machine virtuelle inclut la  compilation à la volée (Just In Time)</td>
-</tr>
-<tr>
-<td>1.3</td>
-<td>mai 2000</td>
-<td>JVM HotSpot</td>
-</tr>
-<tr>
-<td>1.4</td>
-<td>février 2002</td>
-<td>support des regexp et premier parser de XML</td>
-</tr>
-<tr>
-<td>5</td>
-<td>septembre 2004</td>
-<td>évolutions majeures du langage : autoboxing, énumérations, varargs, imports statiques, foreach, types, génériques, annotations. Nombreux ajout dans l\\'API standard</td>
-</tr>
-<tr>
-<td>6</td>
-<td>décembre 2006</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>juillet 2011</td>
-<td>Quelques évolutions du langage et l\\'introduction de java.nio, try-with-resources</td>
-</tr>
-<tr>
-<td>8 LTS</td>
-<td>mars 2014</td>
-<td>évolutions majeures du langage : les lambdas et les streams et une nouvelle API pour les dates,</td>
-</tr>
-<tr>
-<td>9</td>
-<td>septembre 2017</td>
-<td>les modules (projet Jigsaw) et jshell</td>
-</tr>
-<tr>
-<td>10</td>
-<td>mars 2018</td>
-<td>inférence des types pour les variables locales (mot-clé <code>var</code>)</td>
-</tr>
-<tr>
-<td>11 LTS</td>
-<td>Sept 2018</td>
-<td>classes Strings et Files, execution direct de fichiers Java</td>
-</tr>
-<tr>
-<td>12</td>
-<td>Mars 2019</td>
-<td>Unicode 11</td>
-</tr>
-<tr>
-<td>13</td>
-<td>September 2019</td>
-<td>Unicode 12.1, Switch Expression, Multiline Strings</td>
-</tr>
-<tr>
-<td>14</td>
-<td>March 2020</td>
-<td>Records,  Pattern Matching pour InstanceOf</td>
-</tr>
-<tr>
-<td>15</td>
-<td>September 2020</td>
-<td>String multilignes, classes célées</td>
-</tr>
-<tr>
-<td>16</td>
-<td>March 2021</td>
-<td></td>
-</tr>
-<tr>
-<td>17 LTS</td>
-<td>September 2021</td>
-<td>Objets dans les switches</td>
-</tr>
-<tr>
-<td>18</td>
-<td>March 2022</td>
-<td>API vecteurs</td>
-</tr>
-<tr>
-<td>19</td>
-<td>September 2022</td>
-<td></td>
-</tr>
-<tr>
-<td>20</td>
-<td>March 2023</td>
-<td></td>
-</tr>
-<tr>
-<td>21 LTS</td>
-<td>September 2023</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| version | date           | faits notables                                                                                                                                                       |
+|---------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.0     | janvier 1996   | La naissance                                                                                                                                                         |
+| 1.1     | février 1997   | Ajout de JDBC et définition des JavaBeans                                                                                                                            |
+| 1.2     | décembre 1998  | Ajout de Swing, des collections (JCF), La machine virtuelle inclut la  compilation à la volée (Just In Time)                                                         |
+| 1.3     | mai 2000       | JVM HotSpot                                                                                                                                                          |
+| 1.4     | février 2002   | support des regexp et premier parser de XML                                                                                                                          |
+| 5       | septembre 2004 | évolutions majeures du langage : autoboxing, énumérations, varargs, imports statiques, foreach, types, génériques, annotations. Nombreux ajout dans l\\'API standard |
+| 6       | décembre 2006  |                                                                                                                                                                      |
+| 7       | juillet 2011   | Quelques évolutions du langage et l\\'introduction de java.nio, try-with-resources                                                                                   |
+| 8 LTS   | mars 2014      | évolutions majeures du langage : les lambdas et les streams et une nouvelle API pour les dates,                                                                      |
+| 9       | septembre 2017 | les modules (projet Jigsaw) et jshell                                                                                                                                |
+| 10      | mars 2018      | inférence des types pour les variables locales (mot-clé var)                                                                                                         |
+| 11 LTS  | Sept 2018      | classes Strings et Files, execution direct de fichiers Java                                                                                                          |
+| 12      | Mars 2019      | Unicode 11                                                                                                                                                           |
+| 13      | September 2019 | Unicode 12.1, Switch Expression, Multiline Strings                                                                                                                   |
+| 14      | March 2020     | Records,  Pattern Matching pour InstanceOf                                                                                                                           |
+| 15      | September 2020 | String multilignes, classes célées                                                                                                                                   |
+| 16      | March 2021     |                                                                                                                                                                      |
+| 17 LTS  | September 2021 | Objets dans les switches                                                                                                                                             |
+| 18      | March 2022     | API vecteurs                                                                                                                                                         |
+| 19      | September 2022 | certaines API sont passées en Preview et améliorées                                                                                                                  |
+| 20      | March 2023     | certaines API sont passées en Preview et améliorées                                                                                                                  |
+| 21 LTS  | September 2023 | pattern matching pour les switch, thread virtuels, String templates, sealed class                                                                                    |
+| 22      | Mars 2024      | variables anonymes, Foreign Function & Memory API pour le code natif, instructions avant le super dans les constructeurs                                             |
+| 23      | Septembre 2024 | Types primitis dans les patterns, manipulation des fichiers class native                                                                                             |
+| 24      | Mars 2025      | |
+| 25 LTS      | Septembre 2025 | |

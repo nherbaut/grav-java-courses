@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 sitemap:
     lastmod: '21-08-2024 23:14'
 media:
