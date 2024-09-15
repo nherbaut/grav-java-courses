@@ -49,7 +49,8 @@ ressource.
 : La sémantique de la méthode POST est probablement la plus compliquée
   à saisir car cette méthode est utilisable dans différentes
   situations.
-  <br/>
+  
+
   - Le client souhaite créer une ressource sur le serveur en laissant
     au serveur le choix de l’URI de la ressource.
   - Le client souhaite ajouter une ressource à une ressource
@@ -101,47 +102,57 @@ Jakarta RESTFul Web Services permet d’implémenter des ressources sous la form
 Jakarta EE. Une classe représentant une ressource est identifiée grâce à
 l’annotation [@Path](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/path).
 
-[@Path](https://docs.oracle.com/javaee/7/api/javax/ws/rs/Path.html)
-: L’annotation `@javax.ws.rs.Path` indique le chemin d’URI qui
+[@Path](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/path)
+: L’annotation `@jakarta.ws.rs.Path` indique le chemin d’URI qui
   identifie la ressource. Cette annotation est utilisable sur une
   classe et sur les méthodes. Utilisée sur une classe, cette
   annotation permet d’identifier la classe comme une ressource racine
   qui devient dès lors un composant géré par le serveur d’application.
-  <br/>
+  
+
   ```java
-  import javax.ws.rs.Path;
-  <br/>
+  import jakarta.ws.rs.Path;
+  
+
   @Path("/user")
   public class UserResource {
   }
   ```
-  <br/>
+  
+
   Pour l’exemple ci-dessus, la ressource sera identifiée par l’URI :
   **http://[hôte]/[contexte racine]/[mapping servlet]/user**
-  <br/>
+  
+
   Utilisée sur une méthode, cette annotation permet de spécifier une
   sous-chemin dans la ressource. Si cette méthode retourne une classe
   utilisant des annotations Jakarta RESTFul Web Services, on parle alors de
   **sous-ressource**.
-  <br/>
+  
+
   ```java
-  import javax.ws.rs.Path;
-  <br/>
+  import jakarta.ws.rs.Path;
+  
+
   @Path("/user")
   public class UserResource {
-  <br/>
+  
+
     @Path("/geo")
     public GeoLocation getGeographicalLocation() {
       //...
     }
-  <br/>
+  
+
   }
   ```
-  <br/>
+  
+
   Pour l’exemple ci-dessus, l’instance de la classe `GeoLocation`
   retournée par la méthode est accessible par l’URI :
   **http://[hôte]/[contexte racine]/[mapping servlet]/user/geo**
-  <br/>
+  
+
   Dans l’exemple précédent, si la classe `GeoLocation` utilise
   elle-même des annotations Jakarta RESTFul Web Services alors on dit qu’il s’agit d’une
   sous-ressource. Il devient possible de créer des arborescences de
@@ -152,22 +163,22 @@ l’annotation [@Path](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/
 Jakarta RESTFul Web Services fournit une annotation pour presque toutes les méthodes
 HTTP :
 
-- `@javax.ws.rs.GET`
-- `@javax.ws.rs.HEAD`
-- `@javax.ws.rs.POST`
-- `@javax.ws.rs.PUT`
-- `@javax.ws.rs.DELETE`
-- `@javax.ws.rs.OPTIONS`
+- `@jakarta.ws.rs.GET`
+- `@jakarta.ws.rs.HEAD`
+- `@jakarta.ws.rs.POST`
+- `@jakarta.ws.rs.PUT`
+- `@jakarta.ws.rs.DELETE`
+- `@jakarta.ws.rs.OPTIONS`
 
 Elles permettent d’indiquer quelle méthode Java doit être appelée
 pour traiter la méthode de la requête HTTP entrante.
 
 ```java
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
 
 @Path("/user")
 public class UserResource {
@@ -217,16 +228,16 @@ ressource une clé primaire lui permettant d’effectuer une recherche
 en base de données.
 
 Avec Jakarta RESTFul Web Services, on déclare des paramètres de chemin entre accolades et
-on utilise l’annotation `javax.ws.rs.PathParam` pour récupérer
+on utilise l’annotation `jakarta.ws.rs.PathParam` pour récupérer
 leur valeur dans les paramètres des méthodes :
 
 ```java
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 @Path("/user/{id}")
 public class UserResource {
@@ -270,12 +281,12 @@ permet effectivement cette implémentation qui semble plus conforme à
 un modèle objet :
 
 ```java
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 @Path("/user/{id}")
 public class UserResource {
@@ -327,9 +338,9 @@ valeur attendue doit avoir un motif particulier, il est possible de
 le spécifier avec une expression régulière :
 
 ```java
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 @Path("/user/{id: [0-9]{5}}")
 public class UserResource {
@@ -351,16 +362,18 @@ public class UserResource {
 Par défaut, Jakarta RESTFul Web Services utilise comme expression régulière pour un
 paramètre de chemin `[^/]+?`
 
-[@Consumes](https://docs.oracle.com/javaee/7/api/javax/ws/rs/Consumes.html) / [@Produces](https://docs.oracle.com/javaee/7/api/javax/ws/rs/Produces.html)
+[@Consumes](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/consumes) / [@Produces](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/produces)
 : Lorsqu’un client soumet une requête pour transmettre des
   informations au serveur (comme des données de formulaire) et quand
   un serveur retourne du contenu à un client, il est nécessaire de
   préciser le type de contenu. On utilise pour cela l’en-tête HTTP
   `Content-type` avec comme valeur le type
   [MIME](https://fr.wikipedia.org/wiki/Type_MIME).
-  <br/>
+  
+
   Une liste (non exhaustive) des types MIME les plus courants est :
-  <br/>
+  
+
   | text/plain                        | Un fichier texte                                                                                               |
   |-----------------------------------|----------------------------------------------------------------------------------------------------------------|
   | text/plain;charset=utf-8          | Un fichier texte encodé en UTF-8                                                                               |
@@ -370,59 +383,69 @@ paramètre de chemin `[^/]+?`
   | text/json ou application/json     | Un fichier JSON                                                                                                |
   | image/jpeg                        | Une image au format jpeg                                                                                       |
   | application/octet-stream          | Un flux d’octets sans type particulier. Il s’agit du format par défaut si l’en-tête `Content-type` est absent. |
-  <br/>
+  
+
   La classe et/ou les méthodes d’une Ressource Jakarta RESTFul Web Services peuvent utiliser
   les annotations
-  [@Consumes](https://docs.oracle.com/javaee/7/api/javax/ws/rs/Consumes.html)
+  [@Consumes](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/consumes)
   et
-  [@Produces](https://docs.oracle.com/javaee/7/api/javax/ws/rs/Produces.html)
+  [@Produces](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/produces)
   pour indiquer respectivement le type de contenu attendu dans la
   requête et le type de contenu de la réponse.
-  <br/>
+  
+
   ```java
-  import javax.ws.rs.DELETE;
-  import javax.ws.rs.GET;
-  import javax.ws.rs.POST;
-  import javax.ws.rs.PUT;
-  import javax.ws.rs.Path;
-  import javax.ws.rs.PathParam;
-  import javax.ws.rs.Produces;
-  import javax.ws.rs.Consumes;
-  import javax.ws.rs.core.MediaType;
-  <br/>
+  import jakarta.ws.rs.DELETE;
+  import jakarta.ws.rs.GET;
+  import jakarta.ws.rs.POST;
+  import jakarta.ws.rs.PUT;
+  import jakarta.ws.rs.Path;
+  import jakarta.ws.rs.PathParam;
+  import jakarta.ws.rs.Produces;
+  import jakarta.ws.rs.Consumes;
+  import jakarta.ws.rs.core.MediaType;
+  
+
   @Path("/user/{id}")
   public class UserResource {
-  <br/>
+  
+
     private final long id;
-  <br/>
+  
+
     public UserResource(@PathParam("id") long id) {
       this.id = id;
     }
-  <br/>
+  
+
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public User get() {
       // ...
     }
-  <br/>
+  
+
     @PUT
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public User createOrUpdate(User user) {
       // ...
     }
-  <br/>
+  
+
     @DELETE
     public void delete() {
       //....
     }
-  <br/>
+  
+
     @POST
     @Path("/subscription")
     public void subscribe() {
       //....
     }
-  <br/>
+  
+
     @GET
     @Path("/subscription/{idSubscription}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -431,26 +454,31 @@ paramètre de chemin `[^/]+?`
     }
   }
   ```
-  <br/>
+  
+
   Plutôt que d’écrire :
-  <br/>
+  
+
   ```java
   @Produces("application/json")
   ```
-  <br/>
+  
+
   Il est recommandé d’utiliser les constantes déclarées dans la classe
-  `javax.ws.rs.core.MediaType`
-  <br/>
+  `jakarta.ws.rs.core.MediaType`
+  
+
   ```java
   @Produces(MediaType.APPLICATION_JSON)
   ```
 
-[@QueryParam](https://docs.oracle.com/javaee/7/api/javax/ws/rs/QueryParam.html)
+[@QueryParam](https://docs.oracle.com/javaee/7/api/jakarta/ws/rs/QueryParam.html)
 : Comme pour les paramètres de chemin, il est possible de récupérer la
   valeur des paramètres de la requête comme arguments des méthodes de
   la ressource Jakarta RESTFul Web Services grâce à l’annotation
-  `@javax.ws.rs.QueryParam`.
-  <br/>
+  `@jakarta.ws.rs.QueryParam`.
+  
+
   ```java
   @GET
   @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -459,13 +487,14 @@ paramètre de chemin `[^/]+?`
   }
   ```
 
-[@FormParam](https://docs.oracle.com/javaee/7/api/javax/ws/rs/FormParam.html)
+[@FormParam](https://docs.oracle.com/javaee/7/api/jakarta/ws/rs/FormParam.html)
 : Les données transmises *via* un formulaire HTML peuvent être
   récupérées comme arguments des méthodes de la ressource Jakarta RESTFul Web Services grâce
-  à l’annotation `@javax.ws.rs.FormParam`. Pour le cas d’une requête
+  à l’annotation `@jakarta.ws.rs.FormParam`. Pour le cas d’une requête
   de formulaire, le contenu attendu est presque toujours de type
   `application/x-www-form-urlencoded`.
-  <br/>
+  
+
   ```java
   @POST
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -473,39 +502,43 @@ paramètre de chemin `[^/]+?`
     // ...
   }
   ```
-  <br/>
+  
+
   Sur le même principe, il est également possible de récupérer
   d’autres informations d’une requête :
-  <br/>
-  - Pour récupérer la valeur d’un en-tête HTTP, il faut utiliser
-    l’annotation `@javax.ws.rs.HeaderParam`
-  - Pour récupérer la valeur d’un Cookie HTTP, il faut utiliser
-    l’annotation `@javax.ws.rs.CookieParam`
+  
 
-[@Context](https://docs.oracle.com/javaee/7/api/javax/ws/rs/core/Context.html)
+  - Pour récupérer la valeur d’un en-tête HTTP, il faut utiliser
+    l’annotation `@jakarta.ws.rs.HeaderParam`
+  - Pour récupérer la valeur d’un Cookie HTTP, il faut utiliser
+    l’annotation `@jakarta.ws.rs.CookieParam`
+
+[@Context](https://docs.oracle.com/javaee/7/api/jakarta/ws/rs/core/Context.html)
 : Si vous avez besoin d’obtenir des informations sur le contexte
   d’exécution de la requête, vous pouvez utilisez l’annotation
-  `@javax.ws.rs.core.Context` pour obtenir une instance d’une
+  `@jakarta.ws.rs.core.Context` pour obtenir une instance d’une
   classe particulière. Les classes supportées sont :
-  <br/>
-  - `javax.ws.rs.core.UriInfo` : Cette interface donne accès à
+  
+
+  - `jakarta.ws.rs.core.UriInfo` : Cette interface donne accès à
     l’URI de la requête.
-  - `javax.ws.rs.core.Request` : Cette interface fournit des
+  - `jakarta.ws.rs.core.Request` : Cette interface fournit des
     méthodes utilitaires pour le traitement conditionnel de la
     requête.
-  - `javax.ws.rs.core.HttpHeaders` : Cette interface permet
+  - `jakarta.ws.rs.core.HttpHeaders` : Cette interface permet
     d’accéder à l’ensemble des en-têtes HTTP de la requête.
-  - `javax.ws.rs.core.SecurityContext` : Cette interface permet
+  - `jakarta.ws.rs.core.SecurityContext` : Cette interface permet
     d’accéder aux informations de sécurité et d’authentification.
-  - `javax.servlet.http.HttpServletRequest` : La représentation de
+  - `jakarta.servlet.http.HttpServletRequest` : La représentation de
     la requête avec l’API Servlet.
-  - `javax.servlet.http.HttpServletResponse` : La représentation de
+  - `jakarta.servlet.http.HttpServletResponse` : La représentation de
     la réponse avec l’API Servlet.
-  - `javax.servlet.ServletContext` : Le contexte d’exécution des
+  - `jakarta.servlet.ServletContext` : Le contexte d’exécution des
     servlets.
-  - `javax.servlet.ServletConfig` : La configuration de la servlet
+  - `jakarta.servlet.ServletConfig` : La configuration de la servlet
     traitant la requête.
-  <br/>
+  
+
   ```java
   @GET
   @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -513,19 +546,20 @@ paramètre de chemin `[^/]+?`
     // ...
   }
   ```
-  <br/>
+  
+
   Pour des utilisations plus avancées, l’annotation
-  `@javax.ws.rs.core.Context` peut être utilisée pour injecter
-  une instance de `javax.ws.rs.core.Application`, de
-  `javax.ws.rs.ext.Providers` et de
-  `javax.ws.rs.ext.ContextResolver<T>`.
+  `@jakarta.ws.rs.core.Context` peut être utilisée pour injecter
+  une instance de `jakarta.ws.rs.core.Application`, de
+  `jakarta.ws.rs.ext.Providers` et de
+  `jakarta.ws.rs.ext.ContextResolver<T>`.
 
 ## Data binding
 
 Lorsqu’une méthode d’une ressource retourne une instance d’un objet
 Java, Jakarta RESTFul Web Services va tenter de créer une réponse au format souhaité en
 fonction de l’annotation
-[@Produces](https://docs.oracle.com/javaee/7/api/javax/ws/rs/Produces.html).
+[@Produces](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/produces).
 Il existe un ensemble de règles par défaut permettant de passer d’un
 objet Java à un document XML ou JSON. On appelle l’ensemble de ces règle
 le **data binding**.
@@ -539,40 +573,8 @@ Si on souhaite retourner une instance de la classe suivante :
 import java.util.ArrayList;
 import java.util.List;
 
-public class Person {
-
-  private String name;
-  private int age;
-  private List<Person> children = new ArrayList<>();
-
-  public Person() {
-  }
-
-  public Person(String name, int age) {
-    this.name = name;
-    this.setAge(age);
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-  public void setAge(int age) {
-    this.age = age;
-  }
-
-  public List<Person> getChildren() {
-    return children;
-  }
-
+public record Person(String name,int age,List<Person> children) {
+  
   public Person addChild(Person child) {
     this.children.add(child);
     return child;
@@ -583,10 +585,10 @@ public class Person {
 Si on définit une ressource de la façon suivante :
 
 ```java
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/person")
 public class PersonResource {
@@ -602,34 +604,51 @@ public class PersonResource {
 }
 ```
 
+à noter que l'utilisation du Mediatype Json nécessite l'utilisation d'une librairie additionnelle, jackson:
+
+```xml
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-rest-jackson</artifactId>
+    </dependency>
+```
+
 Alors un appel HTTP à cette ressource génèrera un document JSON de la
 forme :
 
 ```json
-{"children":[
-  {"children":[
-    {"children":[],
-     "name":"Pierre Blémand",
-     "age":16}
-   ],
-   "name":"Marie Raynaud",
-   "age":38},
-  {"children":[],
-   "name":"Damien Raynaud",
-   "age":32}
- ],
- "name":"Michel Raynaud",
- "age":56}
+{
+  "name": "Michel Raynaud",
+  "age": 56,
+  "children": [
+    {
+      "name": "Anne Raynaud",
+      "age": 38,
+      "children": [
+        {
+          "name": "Pierre Blémand",
+          "age": 12,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Damien Raynaud",
+      "age": 32,
+      "children": []
+    }
+  ]
+}
 ```
 
 Il est également possible de réaliser l’opération inverse pour récupérer
 en paramètre un document JSON transformé en une instance Java.
 
 ```java
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/person")
 public class PersonResource {
@@ -644,114 +663,87 @@ public class PersonResource {
 
 Il est également possible de passer d’une instance Java à un document
 XML ou d’un document XML à une instance Java. Pour cela, Jakarta RESTFul Web Services utilise
-[JAXB](https://github.com/javaee/jaxb-v2) (Java Architecture for XML
-Binding) qui intégré au langage Java. JAXB utilise des annotations pour
+[Jakarta XML Binding 4.0 ](https://jakarta.ee/specifications/xml-binding/4.0/) qui est intégré à Jakarta EE 10. Jakarta XML Binding utilise des annotations pour
 fournir des indications sur la façon dont une classe Java peut être
 associée à un document XML.
 
-Les principales annotations JAXB sont :
+Les principales annotations Jakarta XML Binding sont :
 
-[@XmlRootElement](https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlRootElement.html)
+[@XmlRootElement](https://jakarta.ee/specifications/xml-binding/4.0/apidocs/jakarta.xml.bind/jakarta/xml/bind/annotation/xmlrootelement)
 : Une annotation est utilisable sur une classe Java pour indiquer
   quelle peut être utilisée pour représenter la racine d’un document
   XML. On peut utiliser l’attribut `name` de l’annotation pour
   préciser le nom de l’élément racine du document XML et l’attribut
   `namespace` pour en préciser l’espace de nom.
 
-[@XmlElement](https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlElement.html)
+[@XmlElement](https://jakarta.ee/specifications/xml-binding/4.0/apidocs/jakarta.xml.bind/jakarta/xml/bind/annotation/xmlelement)
 : Une annotation est utilisable sur les accesseurs (getters) des
   propriétés d’une classe. On peut utiliser l’attribut `name` de
   l’annotation pour préciser le nom de l’élément racine du document
   XML et l’attribut `namespace` pour en préciser l’espace de nom.
-  Cette annotation est optionnelle. Par défaut JAXB considère qu’une
+  Cette annotation est optionnelle. Par défaut Jakarta XML Binding considère qu’une
   propriété produit un élément XML du même nom et sans espace de nom
   XML.
 
-[@XmlTransient](https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlTransient.html)
+[@XmlTransient](https://jakarta.ee/specifications/xml-binding/4.0/apidocs/jakarta.xml.bind/jakarta/xml/bind/annotation/xmltranasient)
 : Cette annotation, ajoutée sur les accesseurs d’une propriété d’une
   classe, indique que cette propriété ne doit pas apparaître dans le
   document XML.
 
 #### WARNING
-Les annotations JAXB doivent être positionnées sur les *getters* et non
-pas sur les attributs.
 
-Si nous reprenons l’exemple de la classe `Person`, nous pouvons
-ajouter les annotations JAXB :
+Il faudra ajouter l'annotation ```@XMLRootElement``` à notre record pour qu'il puisse être sérialisé en XML
+
+Si nous reprenons l’exemple du record `Person`, nous pouvons
+ajouter les annotations Jakarta XML Binding, ainsi qu'un constructeur vide.
 
 ```java
+package org.acme;
+
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
+@XmlAccessorType(XmlAccessType.FIELD)
+public record Person(String name,  int age,
+                      List<Person> children) {
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
+    public Person() {
+        this("", 0);
+    }
 
-@XmlRootElement(name="person", namespace="http://formation.fr/cours/javaee")
-public class Person {
+    public Person(String name, int age) {
+        this(name, age, new ArrayList<>());
+    }
 
-  private String name;
-  private int age;
-  private List<Person> children = new ArrayList<>();
-
-  public Person() {
-  }
-
-  public Person(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  @XmlElement(namespace="http://formation.fr/cours/javaee")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  @XmlElement(namespace="http://formation.fr/cours/javaee")
-  public int getAge() {
-    return age;
-  }
-
-  public void setAge(int age) {
-    this.age = age;
-  }
-
-  @XmlElement(name="person", namespace="http://formation.fr/cours/javaee")
-  @XmlElementWrapper(name="children", namespace="http://formation.fr/cours/javaee")
-  public List<Person> getChildren() {
-    return children;
-  }
-
-  public Person addChild(Person child) {
-    this.children.add(child);
-    return child;
-  }
+    public Person addChild(Person child) {
+        this.children.add(child);
+        return child;
+    }
 }
 ```
 
 Si nous autorisons une ressource à produire du XML :
 
 ```java
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+
+import java.util.List;
 
 @Path("/person")
 public class PersonResource {
 
-  @GET
-  @Produces(MediaType.APPLICATION_XML)
-  public Person get() {
-    Person michel = new Person("Michel Raynaud", 56);
-    michel.addChild(new Person("Anne Raynaud", 38)).addChild(new Person("Pierre Blémand", 16));
-    michel.addChild(new Person("Damien Raynaud", 32));
-    return michel;
-  }
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public Person get() {
+        Person michel = new Person("Michel Raynaud", 56);
+        michel.addChild(new Person("Anne Raynaud", 38, List.of(new Person("Pierre Blémand", 12))));
+        michel.addChild(new Person("Damien Raynaud", 32));
+        return michel;
+    }
 }
 ```
 
@@ -760,27 +752,21 @@ forme :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<person xmlns="http://formation.fr/cours/javaee">
+<person>
+  <name>Michel Raynaud</name>
   <age>56</age>
   <children>
-    <person>
-      <age>38</age>
-      <children>
-        <person>
-          <age>16</age>
-          <children/>
-          <name>Pierre Blémand</name>
-        </person>
-      </children>
-      <name>Anne Raynaud</name>
-    </person>
-    <person>
-      <age>32</age>
-      <children/>
-      <name>Damien Raynaud</name>
-    </person>
+    <name>Anne Raynaud</name>
+    <age>38</age>
+    <children>
+      <name>Pierre Blémand</name>
+      <age>12</age>
+    </children>
   </children>
-  <name>Michel Raynaud</name>
+  <children>
+    <name>Damien Raynaud</name>
+    <age>32</age>
+  </children>
 </person>
 ```
 
@@ -790,12 +776,12 @@ réponse, Jakarta RESTFul Web Services utilise le mécanisme de la négociation 
 pour déterminer quel est le format à utiliser pour la réponse.
 
 ```java
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/person")
 public class PersonResource {
@@ -815,7 +801,7 @@ public class PersonResource {
 }
 ```
 
-Les annotations JAXB sont également exploitées pour la génération d’un
+Les annotations Jakarta XML Binding sont également exploitées pour la génération d’un
 document JSON. Par exemple si vous utilisez l’annotation `@XmlElement`
 pour spécifier un nom particulier pour l’élément XML, l’attibut JSON
 aura également le même nom.
@@ -827,7 +813,7 @@ Java en laissant à Jakarta RESTFul Web Services le soin de créer la réponse H
 notamment le cas si l’on souhaite retourner un code statut HTTP
 différent de 200 ou ajouter des en-têtes HTTP dans la réponse. Pour
 cela, il faut retourner une instance de la classe
-[javax.rs.core.Response](https://docs.oracle.com/javaee/7/api/javax/ws/rs/core/Response.html).
+[jakarta.rs.core.Response](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/core/response).
 Cette classe suit le *design pattern builder* et offre un ensemble de
 méthodes utilitaires pour construire la réponse. Au final, il suffit
 d’appeler la méthode `build()` et retourner le résultat.
@@ -835,16 +821,16 @@ d’appeler la méthode `build()` et retourner le résultat.
 ```java
 import java.net.URI;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
 
 @Path("/person")
 public class PersonResource {
@@ -884,34 +870,34 @@ Par défaut, si une méthode d’une ressource génère une exception, alors
 Jakarta RESTFul Web Services la transforme en erreur HTTP 500. Si l’on souhaite retourner un
 statut d’erreur différent, il est bien évidemment possible d’utiliser la
 classe
-[javax.rs.core.Response](https://docs.oracle.com/javaee/7/api/javax/ws/rs/core/Response.html),
+[jakarta.rs.core.Response](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/core/response),
 mais il est plus intéressant de fournir les indications nécessaires à
 Jakarta RESTFul Web Services pour modifier son comportement selon le type d’exception lancé
 par la méthode de la ressource.
 
 Il est possible de lancer une exception de type
-[WebApplicationException](https://docs.oracle.com/javaee/7/api/javax/ws/rs/WebApplicationException.html)
+[WebApplicationException](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/webapplicationexception)
 ou une exception en héritant. Jakarta RESTFul Web Services fournit déjà des exceptions
 spécialisées pour les codes de statut les plus courants :
-[NotFoundException](https://docs.oracle.com/javaee/7/api/javax/ws/rs/NotFoundException.html),
-[BadRequestException](https://docs.oracle.com/javaee/7/api/javax/ws/rs/BadRequestException.html),
-[ServerErrorException](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ServerErrorException.html)…
+[NotFoundException](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/notfoundexception),
+[BadRequestException](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/badrequestexception),
+[ServerErrorException](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/servererrorexception)…
 et même la possibilité de traiter les redirections avec l’exception
-[RedirectionException](https://docs.oracle.com/javaee/7/api/javax/ws/rs/RedirectionException.html).
+[RedirectionException](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/redirectexception).
 
 Il est également possible de déclarer une classe implémentant
 l’interface
-[ExceptionMapper](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ext/ExceptionMapper.html).
+[ExceptionMapper](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/ext/exceptionmapper).
 Un `ExceptionMapper` est déclaré pour un type d’exception et ses
 exceptions filles.
 
 ```java
-import javax.validation.ValidationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
+import jakarta.validation.ValidationException;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
 
 @Provider
 public class ValidationExceptionMapper implements ExceptionMapper<ValidationException>{
@@ -934,7 +920,7 @@ générera une réponse de type 400 (Bad Request) avec un message en texte
 brut correspondant au message de l’exception.
 
 Notez l’utilisation de l’annotation
-[@Provider](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ext/Provider.html)
+[@Provider](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/ext/provider)
 dans l’exemple précédent. Cette annotation est utilisée dans Jakarta RESTFul Web Services pour
 signaler des classes utilitaires qui permettent d’étendre le
 comportement par défaut de Jakarta RESTFul Web Services.
@@ -947,121 +933,175 @@ paramètres d’une méthode de ressource avec des annotations. Jakarta RESTFul 
 utilise les informations de ces annotations pour valider les requêtes
 HTTP.
 
+Il faudra ajouter la dépendance suivante:
+
+```xml
+   <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-validator</artifactId>
+    </dependency>
+```
+
 ```java
+package org.acme;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
+@XmlAccessorType(XmlAccessType.FIELD)
+public record Person(@Size(min = 1, message = "le nom est obligatoire") String name,
+                     @Min(value = 18, message = "la personne doit être majeure") @Max(value = 99, message = "l'age doit être < 99 ans") int age,
+                     List<Person> children) {
 
-@XmlRootElement(name="person", namespace="http://formation.fr/cours/javaee")
-public class Person {
+    public Person(String name, int age) {
+        this(name, age, new ArrayList<>());
+    }
 
-  @Size(min = 1, message = "Le nom est obligatoire !")
-  private String name;
-
-  @Min(value=1, message = "L'âge doit être un nombre positif !")
-  @Max(value=99, message = "L'âge ne peut pas dépasser 99 ans !")
-  private int age;
-
-  private List  <Person> children = new ArrayList  <>();
-
-  public Person() {
-  }
-
-  public Person(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  @XmlElement(namespace="http://formation.fr/cours/javaee")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  @XmlElement(namespace="http://formation.fr/cours/javaee")
-  public int getAge() {
-    return age;
-  }
-
-  public void setAge(int age) {
-    this.age = age;
-  }
-
-  @XmlElement(name="person", namespace="http://formation.fr/cours/javaee")
-  @XmlElementWrapper(name="children", namespace="http://formation.fr/cours/javaee")
-  public List  <Person> getChildren() {
-    return children;
-  }
-
-  public Person addChild(Person child) {
-    this.children.add(child);
-    return child;
-  }
+    public Person addChild(Person child) {
+        this.children.add(child);
+        return child;
+    }
 }
 ```
 
 ```java
-import javax.validation.constraints.Size;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+package org.acme;
+
+import jakarta.inject.Inject;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Path("/person")
 public class PersonResource {
 
-  @GET
-  @Path("/{name}")
-  @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-  public Response get(
-      @Size(min = 1, message = "Chemin de ressource invalide !")
-      @PathParam("name") String name) {
-    Person person;
+    @Inject
+    Validator validator;
 
-    // ...
-
-    return Response.ok(person).build();
-  }
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response post(Person person) {
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        if (violations.isEmpty()) {
+            return Response.accepted().build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).entity(violations.stream()
+                    .map(cv -> cv.getMessage())
+                    .collect(Collectors.joining(", "))).build();
+        }
+    }
 }
+```
+
+
+```bash
+curl -H "Content-type: application/json" -X POST http://localhost:8080/person -d '{
+  "name": "Michel Raynaud",
+  "age": 156,
+  "children": [
+    {
+      "name": "Anne Raynaud",
+      "age": 38,
+      "children": [
+        {
+          "name": "Pierre Blémand",
+          "age": 12,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Damien Raynaud",
+      "age": 32,
+      "children": []
+    }
+  ]
+}' 
+l'age doit être < 99 ans
 ```
 
 La documentation des annotations de Bean Validation est disponible dans
 la documentation de l’API Jakarta EE :
-[https://docs.oracle.com/javaee/7/api/javax/validation/constraints/package-summary.html](https://docs.oracle.com/javaee/7/api/javax/validation/constraints/package-summary.html)
+[https://beanvalidation.org/3.0/](https://beanvalidation.org/3.0/)
 
 ## Implémenter un client HTTP
 
-Jakarta RESTFul Web Services fournit également une API pour implémenter un client HTTP. On
-utilise la classe
-[ClientBuilder](https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/ClientBuilder.html)
-pour créer une instance de la classe
-[Client](https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/Client.html).
+Jakarta RESTFul Web Services fournit également une API pour implémenter un client HTTP. 
+
+Pour utiliser cette API, il suffira d'ajouter la dépendance suivante:
+
+```xml
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-rest-client-jackson</artifactId>
+</dependency>
+```
+
+Le principe est de déclarer l'API du serveur sous forme d'interface et de configurer ses accès à l'aides des annotaitons classique de l'API serveur.
+
+L'annotation `@RegisterRestClient` indiquera à Quarkus que vous souhaitez vous connecter à un serveur distant en tant que client et il ne vous restera plus qu'à injecter l'interface qui sera implémentée par l'API pour vous en servir.
+
+### le client
 
 ```java
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
+package org.acme;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-public class ExempleClient {
+@Path("/person")
+@RegisterRestClient
+public interface PersonClient {
 
-  public static void main(String[] args) {
-    Client client = ClientBuilder.newClient();
-
-    WebTarget target = client.target("http://www.server.net/person");
-    Person person = target.request().get(Person.class);
-
-    // ...
-  }
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    Response post(Person person);
 }
+```
+
+### Injection et utilisation du client
+
+
+Quelquepart dans votre couche service, vous aurez besoin d'injecter le client qui sera implémenté automatiquement par quarkus.
+
+```java
+package org.acme;
+
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.StartupEvent;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
+
+@ApplicationScoped
+public class PersonCreatorService {
+
+    @Inject
+    PersonResource resource;
+
+
+    void onStartupDone(@Observes StartupEvent ev){
+        System.out.println(resource.post(new Person("Nicolas",43)).getStatus());
+    }
+
+
+}
+
+```
+Vous aurez simplement besoin de préciser dans le fichier application.properties l'adresse de base du server:
+
+```properties
+quarkus.rest-client."org.acme.PersonClient".url=http://localhost:8080 
 ```
